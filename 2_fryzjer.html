@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technik Robotyk - Informator (Druk A5)</title>
+    <title>Technik Usług Fryzjerskich - Informator (Druk A5)</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Inter -->
@@ -28,16 +28,13 @@
             width: 148mm;
             height: 210mm;
             padding: 8mm;
-            /* Odpowiednie marginesy dla drukarki */
             font-size: 10px;
             box-sizing: border-box;
             overflow: hidden;
-            /* Ciasne trzymanie zawartości */
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         }
 
-        /* Hack żeby nie uciekało paddingiem */
         .container-a5 {
             width: 100%;
             height: 100%;
@@ -52,7 +49,8 @@
         h4,
         h5,
         h6 {
-            color: #134659;
+            color: #1E293B;
+            /* Slate Navy */
             margin-top: 0;
         }
 
@@ -63,15 +61,16 @@
 
         .hero-text {
             font-weight: 800;
-            font-size: 26px;
+            font-size: 23px;
             line-height: 1.05;
             letter-spacing: -1px;
             margin-bottom: 8px;
-            color: #134659;
+            color: #1E293B;
         }
 
         .text-profession {
-            color: #06B6D4;
+            color: #F97316;
+            /* Industrial Orange */
         }
 
         .lead {
@@ -111,7 +110,7 @@
         .tech-pill i {
             margin-right: 3px;
             font-size: 9px;
-            color: #134659;
+            color: #1E293B;
         }
 
         /* Hero Image */
@@ -140,10 +139,10 @@
             flex-shrink: 0;
             width: 32px;
             height: 32px;
-            border-radius: 6px;
+            border-radius: 50%;
             background-color: #F0F4F8;
             border: 1px solid #E2E8F0;
-            color: #134659;
+            color: #1E293B;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -155,7 +154,7 @@
             font-size: 12px;
             font-weight: 700;
             margin-bottom: 3px;
-            color: #134659;
+            color: #1E293B;
         }
 
         .feature-content p {
@@ -179,7 +178,7 @@
         .qual-badge {
             font-size: 8px;
             font-weight: 700;
-            background-color: #134659;
+            background-color: #1E293B;
             color: #FFFFFF;
             padding: 3px 6px;
             border-radius: 4px;
@@ -214,7 +213,7 @@
         }
 
         .qr-content h4 {
-            color: #134659;
+            color: #1E293B;
             font-size: 10px;
             font-weight: 700;
             margin-bottom: 2px;
@@ -248,23 +247,29 @@
         <!-- Hero Section -->
         <div class="row row-tight align-items-center mb-sec">
             <div class="col-6">
-                <h1 class="hero-text mt-1 mb-1">TECHNIK <br><span class="text-profession">ROBOTYK</span></h1>
-                <span class="primary-badge bg-dark border-0 mb-3"><i class="bi bi-award-fill me-1"></i> PATRONAT
-                    ZEMAT ORAZ ENIKA</span>
-                <p class="lead">
-                    Technik robotyk jest jednym z najbardziej poszukiwanych zawodów w przemyśle, który obecnie w dużym
-                    stopniu opiera się na automatyzacji i robotyzacji procesów produkcyjnych. Zdobyte przez uczniów
-                    kwalifikacje wychodzą zatem naprzeciw potrzebom zarówno firm produkcyjnych, które wykorzystują
-                    nowoczesne technologie robotyczne oraz firm serwisowych, świadczących usługi w zakresie obsługi
-                    systemów robotycznych.
-                </p>
+                <!-- Zdjęcie wygenerowane przez AI -->
+                <img src="assets/t_fryzjer_ii_hero.png" alt="Zajęcia fryzjersko-wizażowe w salonie" class="hero-image">
+                <div class="d-flex justify-content-start flex-wrap mt-2">
+                    <span class="primary-badge ms-1"><i class="bi bi-star-fill me-1"></i> NOWOŚĆ</span>
+                    <span class="primary-badge ms-1"><i class="bi bi-scissors me-1"></i> OTWÓRZ WŁASNY SALON</span>
+                </div>
             </div>
             <div class="col-6">
-                <img src="assets/robotyk-head.jpg" alt="Uczeń robotyk z ramieniem ABB" class="hero-image">
-                <div class="d-flex justify-content-end flex-wrap mt-2">
-                    <span class="primary-badge"><i class="bi bi-translate me-1"></i> KLASA DWUJĘZYCZNA</span>
-                    <span class="primary-badge"><i class="bi bi-star-fill me-1"></i> JEDYNY W POLSCE</span>
-                </div>
+                <h1 class="hero-text mt-1 mb-1"><span class="text-profession">TECHNIK USŁUG FRYZJERSKICH</span><br>Z
+                    ELEMENTAMI WIZAŻU</h1>
+                <span class="primary-badge bg-dark border-0 mb-2" style="background-color: #4A5568 !important;"><i
+                        class="bi bi-mortarboard-fill me-1"></i> SZKOŁA
+                    BRANŻOWA II STOPNIA</span>
+                <span class="primary-badge bg-dark border-0 mb-2"><i class="bi bi-award-fill me-1"></i> PATRONAT UNI
+                    FRYZ</span><br>
+
+                <p class="lead">
+                    Kontynuuj naukę i zdobądź prestiżowy tytuł technika! Program przygotowuje Cię do w pełni
+                    samodzielnego,
+                    kreatywnego projektowania, dokumentowania i wykonywania fryzur oraz prowadzenia nowoczesnych usług
+                    wizażowych.
+                    To szansa na rozwój kariery i pełen sukces <br>w najlepszych salonach beauty na świecie.
+                </p>
             </div>
         </div>
 
@@ -276,16 +281,15 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-gear-wide-connected"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-palette"></i></div>
                     <div class="feature-content">
-                        <h3>Umiejętności praktyczne</h3>
-                        <p class="mb-1">Zakres zdobytych umiejętności praktycznych obejmuje: wykonanie montażu,
-                            uruchomienie, obsługę, programowanie, eksploatację oraz diagnostykę i konserwację urządzeń i
-                            systemów robotyki.</p>
+                        <h3>Projektowanie i Wykonanie</h3>
+                        <p class="mb-1">Nauczysz się jak twórczo projektować fryzury dopasowane do kształtu twarzy i
+                            wymagań klienta, profesjonalnie je dokumentować od podstaw oraz precyzyjnie wdrażać na
+                            podstawie utworzonych projektów.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-cpu"></i> Systemy automatyki</span>
-                            <span class="tech-pill"><i class="bi bi-robot"></i> Ramiona robotyczne</span>
-                            <span class="tech-pill"><i class="bi bi-wrench-adjustable"></i> Diagnostyka</span>
+                            <span class="tech-pill"><i class="bi bi-pencil-square"></i> Projektowanie</span>
+                            <span class="tech-pill"><i class="bi bi-journal-text"></i> Dokumentacja</span>
                         </div>
                     </div>
                 </div>
@@ -293,18 +297,15 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-buildings"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-briefcase"></i></div>
                     <div class="feature-content">
-                        <h3>Praca w wielu branżach</h3>
-                        <p class="mb-1">Absolwent w zawodzie technik robotyk może pracować w branżach: motoryzacyjnej,
-                            maszynowej, elektronicznej, komputerowej, spożywczej, metalurgicznej, chemicznej,
-                            farmaceutycznej, w przemyśle drzewnym, celulozowo-papierniczym oraz obronnym i lotniczym.
-                        </p>
+                        <h3>Kariera bez granic</h3>
+                        <p class="mb-1">Jako technik będziesz niezależnym specjalistą, co oznacza otwarte drzwi do pracy
+                            jako ekspert i szkoleniowiec w firmach kosmetycznych, ale też rozchwytywany fryzjer
+                            telewizyjny, filmowy i teatralny.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-car-front"></i> Motoryzacja</span>
-                            <span class="tech-pill"><i class="bi bi-airplane"></i> Lotnictwo</span>
-                            <span class="tech-pill"><i class="bi bi-laptop"></i> IT</span>
-                            <span class="tech-pill"><i class="bi bi-shield"></i> Obronność</span>
+                            <span class="tech-pill"><i class="bi bi-film"></i> Film i TV</span>
+                            <span class="tech-pill"><i class="bi bi-person-video3"></i> Szkoleniowiec</span>
                         </div>
                     </div>
                 </div>
@@ -312,15 +313,15 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-lightning-charge"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-building-up"></i></div>
                     <div class="feature-content">
-                        <h3>Zajęcia z dr. inż. Witoldem Kobosem</h3>
-                        <p class="mb-1">Zajęcia z robotyki prowadzi dr inż. Witold Kobos, autor i współautor wielu
-                            artykułów i prac naukowych, patentów oraz wdrożeń. Razem z uczniami naszej szkoły
-                            przeprowadził konwersję starej, spalinowej Vespy na skuter elektryczny.</p>
+                        <h3>Własny Biznes Beauty</h3>
+                        <p class="mb-1">Przygotujemy Cię bardzo kompleksowo nie tylko warsztatowo, ale też po kątem
+                            biznesowym, logistycznym do otwarcia oraz prowadzenia własnej, bardzo dochodowej
+                            działalności gospodarczej - wymarzonego salonu.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-lightbulb"></i> Patenty z branży</span>
-                            <span class="tech-pill"><i class="bi bi-scooter"></i> Konwersja EV</span>
+                            <span class="tech-pill"><i class="bi bi-shop-window"></i> Budowa salonu</span>
+                            <span class="tech-pill"><i class="bi bi-pie-chart"></i> Własna firma</span>
                         </div>
                     </div>
                 </div>
@@ -328,16 +329,15 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-mortarboard"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-stars"></i></div>
                     <div class="feature-content">
-                        <h3>Bramy na politechnikę</h3>
-                        <p class="mb-1">Absolwent kierunku może również kontynuować naukę na uczelniach wyższych na
-                            wybranych kierunkach technicznych, takich jak: automatyka i robotyka, automatyka i
-                            sterowanie robotów, budowa maszyn, inżynieria produkcji, systemy i urządzenia przemysłowe,
-                            itp.</p>
+                        <h3>Kunszt na każdym polu</h3>
+                        <p class="mb-1">Osiągnij wielki poziom rzemiosła, zachwycając klientów precyzją, estetyką oraz
+                            wszechstronnością – od damskich i męskich stylizacji i cięć, przez bezpieczne fryzjerstwo
+                            dziecięce po ekskluzywne perukarstwo.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-plus-slash-minus"></i> Mechatronika</span>
-                            <span class="tech-pill"><i class="bi bi-bezier"></i> Sterowanie systemów</span>
+                            <span class="tech-pill"><i class="bi bi-magic"></i> Perukarstwo</span>
+                            <span class="tech-pill"><i class="bi bi-person-hearts"></i> Barbering</span>
                         </div>
                     </div>
                 </div>
@@ -347,35 +347,30 @@
         <!-- Bottom Section: Qualifications & CTA -->
         <div class="row row-tight mt-auto">
             <div class="col-12">
-                <h3 class="section-title" style="margin-bottom: 6px;">Zdobywasz 2 kwalifikacje:</h3>
+                <h3 class="section-title" style="margin-bottom: 6px;">Zdobywasz kwalifikację i zawód technika:</h3>
             </div>
 
             <div class="col-7">
-                <div class="row row-tight h-100">
-                    <div class="col-6">
-                        <div class="qual-card">
-                            <div class="qual-badge">ELM.07</div>
-                            <p class="qual-text">Montaż, uruchamianie i obsługa systemów robotyki.</p>
-                        </div>
+                <div class="qual-card h-100">
+                    <div class="d-flex align-items-center mb-1">
+                        <div class="qual-badge mb-0 me-2" style="background-color: #F97316;">FRK.03</div>
+                        <div class="qual-badge mb-0" style="background-color: #1E293B;">DYPLOM TECHNIKA</div>
                     </div>
-                    <div class="col-6">
-                        <div class="qual-card">
-                            <div class="qual-badge">ELM.08</div>
-                            <p class="qual-text">Eksploatacja i programowanie systemów robotyki.</p>
-                        </div>
-                    </div>
+                    <p class="qual-text mt-2">
+                        Zdajesz państwowy egzamin "Projektowanie i wykonywanie fryzur", który wynosi Twoje umiejętności
+                        na poziom mistrzowski. Tytuł Technika pozwala udokumentować zaawansowane skille na wciąż
+                        rozwijającym się, dynamicznym rynku pracy beauty.
+                    </p>
                 </div>
             </div>
 
             <div class="col-5">
                 <div class="qr-card">
-                    <!-- Jeśli jest dostępny inny kod qr mozna go uzyc, w oparciu o poprzednie generacje -->
-                    <img src="assets/qr_code_school_1772624518877.png" alt="Kod QR" class="qr-image"
+                    <img src="assets/qr_code_school_1772624518877.png" alt="Kod z rekrutacją" class="qr-image"
                         onerror="this.src='assets/qr_code_it.png'">
                     <div class="qr-content">
-                        <h4>Zeskanuj kod!</h4>
-                        <p>Aplikuj online w harmonogramie naboru i zautomatyzuj sobie pewną przyszłość inżyniera
-                            kariery!</p>
+                        <h4>Rozwiń pasję!</h4>
+                        <p>Zeskanuj kod QR i postaw kolejny, najważniejszy krok w swojej niesamowitej karierze!</p>
                     </div>
                 </div>
             </div>

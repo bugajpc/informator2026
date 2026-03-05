@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technik Geodeta - Informator (Druk A5)</title>
+    <title>Technik Programista Full Stack - Informator (Druk A5)</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Inter -->
@@ -28,13 +28,16 @@
             width: 148mm;
             height: 210mm;
             padding: 8mm;
+            /* Odpowiednie marginesy dla drukarki */
             font-size: 10px;
             box-sizing: border-box;
             overflow: hidden;
+            /* Ciasne trzymanie zawartości */
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         }
 
+        /* Hack żeby nie uciekało paddingiem */
         .container-a5 {
             width: 100%;
             height: 100%;
@@ -203,8 +206,8 @@
         }
 
         .qr-image {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 8px;
             object-fit: cover;
             margin-right: 10px;
@@ -246,22 +249,22 @@
         <div class="row row-tight align-items-center mb-sec">
             <div class="col-6">
 
-                <h1 class="hero-text mt-1 mb-1">TECHNIK <br><span class="text-profession">GEODETA</span></h1>
-                <span class="primary-badge bg-dark border-0 mb-3" style="background-color: #4A5568 !important;"><i
-                        class="bi bi-award-fill me-1"></i> ZAWÓD Z PRZYSZŁOŚCIĄ</span>
+                <h1 class="hero-text mt-1 mb-1">TECHNIK <span class="text-profession">PROGRAMISTA</span> FULL STACK</h1>
+                <span class="primary-badge bg-dark border-0 mb-3"><i class="bi bi-award-fill me-1"></i> PATRONAT
+                    GENERAL-IT</span>
                 <p class="lead">
-                    Geodezja to prestiżowa dziedzina o absolutnie stabilnej pozycji i ogromnym znaczeniu rynkowym.
-                    Będziesz uczestniczyć w zjawiskowych procesach budowlanych, regulacjach nieruchomości i korzystać z
-                    nowoczesnych technologii do pracy z najdokładniejszymi danymi przestrzennymi na świecie. To
-                    wyjątkowe perspektywy w biurze i w terenie!
+                    Specjalista branży IT zajmujący się kompleksowym tworzeniem aplikacji, <br>łączący umiejętności z
+                    zakresu front-endu (odpowiadającego za UX, wygląd, funkcje aplikacji webowych i mobilnych) oraz
+                    back-endu (zarządzania serwerami, bazami danych). Będziesz kluczowym i samowystarczalnym członkiem
+                    każdego zespołu IT od projektu po samo wdrożenie.
                 </p>
             </div>
             <div class="col-6">
-                <!-- Zdjęcie wygenerowane przez AI -->
-                <img src="assets/geodeta_hero.png" alt="Zawód geodety w terenie" class="hero-image">
+                <img src="assets/programmer_hero_brightened.png" alt="Stanowisko pracy programisty Full Stack"
+                    class="hero-image">
                 <div class="d-flex justify-content-end flex-wrap mt-2">
-                    <span class="primary-badge"><i class="bi bi-star-fill me-1"></i> NOWY KIERUNEK</span>
-                    <span class="primary-badge"><i class="bi bi-graph-up-arrow me-1"></i> PEWNA PRACA</span>
+                    <span class="primary-badge"><i class="bi bi-translate me-1"></i> KLASA DWUJĘZYCZNA</span>
+                    <span class="primary-badge"><i class="bi bi-star-fill me-1"></i> JEDYNY W POLSCE</span>
                 </div>
             </div>
         </div>
@@ -274,16 +277,16 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-geo-alt"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-apple"></i></div>
                     <div class="feature-content">
-                        <h3>Sąsiedztwo Wydziału Geodezji</h3>
-                        <p class="mb-1">Szkoła ulokowana jest bezpośrednio naprzeciwko Wydziału Geodezji i Katastru, co
-                            zapewnia uczniom unikatową opcję odbywania łatwych i bliskich praktyk zawodowych i wiedzy "z
-                            pierwszej ręki".</p>
+                        <h3>Ekosystem Apple & AI</h3>
+                        <p class="mb-1">Pracujemy na najnowszym sprzęcie od Apple (MacBook, iMac, Mac Mini, iPad Pro).
+                            Pozwala to na wygodne testowanie aplikacji multiplatformowych oraz uruchamianie lokalnych
+                            modeli Sztucznej Inteligencji.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-building"></i> Kataster</span>
-                            <span class="tech-pill"><i class="bi bi-person-badge"></i> Administracja</span>
-                            <span class="tech-pill"><i class="bi bi-briefcase"></i> Praktyki</span>
+                            <span class="tech-pill"><i class="bi bi-laptop"></i> MacBook</span>
+                            <span class="tech-pill"><i class="bi bi-display"></i> iMac</span>
+                            <span class="tech-pill"><i class="bi bi-tablet"></i> iPad Pro</span>
                         </div>
                     </div>
                 </div>
@@ -291,16 +294,18 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-map"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-code-square"></i></div>
                     <div class="feature-content">
-                        <h3>Cyfrowe opracowania map</h3>
-                        <p class="mb-1">Nauczysz się mistrzowskiego korzystania z programów inżynieryjnych do obsługi
-                            zaawansowanych map cyfrowych, danych z analizy przestrzennej, co przygotuje Cię pod urzędy
-                            oraz architekturę.</p>
+                        <h3>Szeroki stack technologiczny</h3>
+                        <p class="mb-1">Uczymy solidnych fundamentów w C++ i Pythonie, a następnie tworzenia aplikacji w
+                            React.js, React Native, czy Node.js. Ponadto nauczysz się Docker i baz danych SQL.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-layers"></i> GIS & CAD</span>
-                            <span class="tech-pill"><i class="bi bi-pc-display"></i> Mapy Cyfrowe</span>
-                            <span class="tech-pill"><i class="bi bi-database"></i> Bazy danych</span>
+                            <span class="tech-pill"><i class="bi bi-filetype-py"></i> Python</span>
+                            <span class="tech-pill"><i class="bi bi-c-circle"></i> C++</span>
+                            <span class="tech-pill"><i class="bi bi-filetype-js"></i> JS/TS</span>
+                            <span class="tech-pill"><i class="bi bi-code-slash"></i> React</span>
+                            <span class="tech-pill"><i class="bi bi-server"></i> Node.js</span>
+                            <span class="tech-pill"><i class="bi bi-filetype-php"></i> PHP</span>
                         </div>
                     </div>
                 </div>
@@ -308,16 +313,18 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-binoculars"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-diagram-3"></i></div>
                     <div class="feature-content">
-                        <h3>Nowoczesny sprzęt pomiarowy</h3>
-                        <p class="mb-1">Terenowe zajęcia i obsługa tachimetrów, precyzyjnych niwelatorów laserowych czy
-                            zaawansowanych odbiorników nawigacji GNSS oznaczają solidne wykształcenie dopasowane do
-                            obecnej na rynku technologii.</p>
+                        <h3>Kompleksowa praca projektowa</h3>
+                        <p class="mb-1">Nie tylko piszemy kod, ale organizujemy projekty. Nauka zaczyna się od opisu,
+                            grafiki <br>i projektowania w Figma, dobór technologii, dokumentowanie, wdrażanie aż po samo
+                            testowanie i utrzymanie produktu u klienta.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-crosshair"></i> Tachimetry</span>
-                            <span class="tech-pill"><i class="bi bi-broadcast"></i> Odbiorniki GNSS</span>
-                            <span class="tech-pill"><i class="bi bi-rulers"></i> Niwelatory</span>
+                            <span class="tech-pill"><i class="bi bi-palette"></i> Figma</span>
+                            <span class="tech-pill"><i class="bi bi-github"></i> Git/GitHub</span>
+                            <span class="tech-pill"><i class="bi bi-bug"></i> Unit Testing</span>
+                            <span class="tech-pill"><i class="bi bi-database"></i> SQL</span>
+                            <span class="tech-pill"><i class="bi bi-phone"></i> Aplikacje Mobilne</span>
                         </div>
                     </div>
                 </div>
@@ -325,16 +332,15 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-shop-window"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-rocket-takeoff"></i></div>
                     <div class="feature-content">
-                        <h3>W pełni własna działalność</h3>
-                        <p class="mb-1">Rozpoczęcie studiów technicznych stanowi wstęp do uprawnień od GUGiK. Ścieżka
-                            technika kończy się najczęściej uruchomieniem własnej, dochodowej struktury i biura w
-                            szerokiej skali geodezyjnej.</p>
+                        <h3>Kariera IT od zaraz</h3>
+                        <p class="mb-1">Od początku trenujesz angielski, budujesz solidne portfolio (LinkedIn, własny GitHub, CV) oraz
+                            trenujesz zadania typu Leetcode na rekrutacje, aby bez stresu poradzić sobie również w
+                            firmach anglojęzycznych.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-cash-coin"></i> Własna firma</span>
-                            <span class="tech-pill"><i class="bi bi-shield-check"></i> Niezależność</span>
-                            <span class="tech-pill"><i class="bi bi-mortarboard"></i> Studia GUGiK</span>
+                            <span class="tech-pill"><i class="bi bi-camera-video"></i> Zdalny rynek</span>
+                            <span class="tech-pill"><i class="bi bi-cash-coin"></i> Gwarancja pracy</span>
                         </div>
                     </div>
                 </div>
@@ -347,35 +353,34 @@
                 <h3 class="section-title" style="margin-bottom: 6px;">Zdobywasz 2 kwalifikacje:</h3>
             </div>
 
-            <div class="col-8">
+            <div class="col-7">
                 <div class="row row-tight h-100">
                     <div class="col-6">
                         <div class="qual-card">
-                            <div class="qual-badge">BUD.18</div>
-                            <p class="qual-text">Wykonywanie pomiarów sytuacyjnych i wysokościowych oraz drobne
-                                realizacje analityczne wyników.</p>
+                            <div class="qual-badge">INF.03</div>
+                            <p class="qual-text">Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz
+                                bazami danych.</p>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="qual-card">
-                            <div class="qual-badge">BUD.19</div>
-                            <p class="qual-text">Kwalifikowane prace geodezyjne związane z państwowym katastrem oraz
-                                gospodarką przestrzenną.</p>
+                            <div class="qual-badge">INF.04</div>
+                            <p class="qual-text">Projektowanie, głębokie programowanie i dokładne testowanie aplikacji.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-4">
-                <div class="qr-card d-flex flex-column">
-                    <div class="qr-content">
-                        <h4>Zeskanuj kod!</h4>
-                    </div>
-                    <!-- Ten sam powtarzalny QR z paczki assets -->
-                    <img src="assets/qr_code_school_1772624518877.png" alt="Kod z rekrutacją" class="qr-image"
+            <div class="col-5">
+                <div class="qr-card">
+                    <!-- Jeśli jest dostępny inny kod qr mozna go uzyc, w oparciu o poprzednie generacje -->
+                    <img src="assets/qr_code_school_1772624518877.png" alt="Kod QR" class="qr-image"
                         onerror="this.src='assets/qr_code_it.png'">
                     <div class="qr-content">
-                        <p>Dowiesz się więcej o tym kierunku i zapiszesz się do szkoły!</p>
+                        <h4>Zeskanuj kod!</h4>
+                        <p>Poznaj szczegóły współpracy, harmonogram rekrutacji i dołącz do jedynej takiej klasy w całej
+                            Polsce!</p>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technik Pojazdów Samochodowych - Informator (Druk A5)</title>
+    <title>Technik Robót Wykończeniowych - Informator (Druk A5)</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Inter -->
@@ -49,7 +49,8 @@
         h4,
         h5,
         h6 {
-            color: #134659;
+            color: #1E293B;
+            /* Slate Navy */
             margin-top: 0;
         }
 
@@ -60,15 +61,16 @@
 
         .hero-text {
             font-weight: 800;
-            font-size: 25px;
+            font-size: 24px;
             line-height: 1.05;
             letter-spacing: -1px;
             margin-bottom: 8px;
-            color: #134659;
+            color: #1E293B;
         }
 
         .text-profession {
-            color: #06B6D4;
+            color: #F97316;
+            /* Industrial Orange */
         }
 
         .lead {
@@ -86,6 +88,7 @@
             padding: 3px 8px;
             border-radius: 4px;
             background-color: #D9231D;
+            /* Energy Red */
             color: #FFFFFF;
             margin-right: 4px;
             margin-bottom: 8px;
@@ -108,7 +111,7 @@
         .tech-pill i {
             margin-right: 3px;
             font-size: 9px;
-            color: #134659;
+            color: #1E293B;
         }
 
         /* Hero Image */
@@ -137,10 +140,11 @@
             flex-shrink: 0;
             width: 32px;
             height: 32px;
-            border-radius: 6px;
+            border-radius: 50%;
+            /* Koło dla szkół branżowych */
             background-color: #F0F4F8;
             border: 1px solid #E2E8F0;
-            color: #134659;
+            color: #1E293B;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -152,7 +156,7 @@
             font-size: 12px;
             font-weight: 700;
             margin-bottom: 3px;
-            color: #134659;
+            color: #1E293B;
         }
 
         .feature-content p {
@@ -176,7 +180,7 @@
         .qual-badge {
             font-size: 8px;
             font-weight: 700;
-            background-color: #134659;
+            background-color: #1E293B;
             color: #FFFFFF;
             padding: 3px 6px;
             border-radius: 4px;
@@ -203,15 +207,15 @@
         }
 
         .qr-image {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 8px;
             object-fit: cover;
             margin-right: 10px;
         }
 
         .qr-content h4 {
-            color: #134659;
+            color: #1E293B;
             font-size: 10px;
             font-weight: 700;
             margin-bottom: 2px;
@@ -245,25 +249,28 @@
         <!-- Hero Section -->
         <div class="row row-tight align-items-center mb-sec">
             <div class="col-6">
-
-                <h1 class="hero-text mt-1 mb-1">TECHNIK <br><span class="text-profession">POJAZDÓW</span>
-                    <br>SAMOCHODOWYCH
-                </h1>
-                <span class="primary-badge bg-dark border-0 mb-3" style="background-color: #4A5568 !important;"><i
-                        class="bi bi-award-fill me-1"></i> SZKOŁA BRANŻOWA II STOPNIA</span>
-                <p class="lead">
-                    Zdobywasz specjalistyczne wykształcenie średnie dające Ci pożądany i prestiżowy tytuł Technika.
-                    Rozszerzasz swoje dotychczasowe umiejętności o diagnozowanie i obsługę nowoczesnych mechatronicznych
-                    układów samochodowych oraz przygotowujesz się do roli kierowniczej i diagnostycznej.
-                </p>
+                <!-- Zdjęcie wygenerowane przez AI -->
+                <img src="assets/roboty_wykonczeniowe_hero.png" alt="Prace wykończeniowe" class="hero-image">
+                <div class="d-flex flex-column align-items-start mt-2">
+                    <span class="primary-badge ms-1"><i class="bi bi-star-fill me-1"></i> NOWOŚĆ</span>
+                    <span class="primary-badge ms-1"><i class="bi bi-mortarboard-fill me-1"></i> DYPLOM TECHNIKA</span>
+                </div>
             </div>
             <div class="col-6">
-                <!-- Zdjęcie wygenerowane przez AI -->
-                <img src="assets/technik_pojazdow_hero.png" alt="Warsztat diagnostyczny" class="hero-image">
-                <div class="d-flex justify-content-end flex-wrap mt-2">
-                    <span class="primary-badge"><i class="bi bi-laptop me-1"></i> MECHATRONIKA</span>
-                    <span class="primary-badge"><i class="bi bi-graph-up-arrow me-1"></i> ZAWÓD TECHNIKA</span>
-                </div>
+                <h1 class="hero-text mt-1 mb-1">TECHNIK <span class="text-profession">ROBÓT WYKOŃCZENIOWYCH</span><br> W
+                    BUDOWNICTWIE
+                </h1>
+                <span class="primary-badge bg-dark border-0 mb-2" style="background-color: #4A5568 !important;"><i
+                        class="bi bi-mortarboard-fill me-1"></i> SZKOŁA
+                    BRANŻOWA II STOPNIA</span>
+                <span class="primary-badge bg-dark border-0 mb-3"><i class="bi bi-shield-check me-1"></i> PATRONAT
+                    REX-BUD I ATLAS</span>
+                <p class="lead">
+                    Branża wykończeniowa to jeden z najbardziej dynamicznych sektorów na rynku.
+                    Będziesz doskonale przygotowany do organizacji prac wykończeniowych, tworzenia kosztorysów oraz
+                    samodzielnego nadzoru nad procesem powstawania nowoczesnych wnętrz. Stabilny zawód z ogromnymi
+                    możliwościami.
+                </p>
             </div>
         </div>
 
@@ -275,15 +282,14 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-laptop"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-clipboard2-check"></i></div>
                     <div class="feature-content">
-                        <h3>Diagnostyka i mechatronika</h3>
-                        <p class="mb-1">Nauczysz się przeprowadzać zaawansowane komputerowe badania techniczne i
-                            diagnostyczne. Zrozumiesz i naprawisz nowoczesne systemy elektroniczne oraz mechatronikę
-                            stosowaną w dzisiejszych pojazdach.</p>
+                        <h3>Organizacja i nadzór</h3>
+                        <p class="mb-1">Nauczysz się perfekcyjnej organizacji i kontrolowania robót związanych <br>z
+                            zagospodarowaniem terenu oraz profesjonalnym wykończeniem całych obiektów.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-motherboard"></i> Elektronika</span>
-                            <span class="tech-pill"><i class="bi bi-speedometer2"></i> Serwis</span>
+                            <span class="tech-pill"><i class="bi bi-list-check"></i> Organizacja</span>
+                            <span class="tech-pill"><i class="bi bi-paint-bucket"></i> Wykończenia</span>
                         </div>
                     </div>
                 </div>
@@ -291,15 +297,14 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-building-check"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-calculator"></i></div>
                     <div class="feature-content">
-                        <h3>Wyspecjalizowane miejsca pracy</h3>
-                        <p class="mb-1">Jako technik znajdziesz zatrudnienie w najlepszych autoryzowanych serwisach
-                            (ASO), firmach regenerujących podzespoły elektromechaniczne czy na Stacjach Kontroli
-                            Pojazdów.</p>
+                        <h3>Kosztorysowanie</h3>
+                        <p class="mb-1">Zdobędziesz unikatową wiedzę jak szybko <br>i zyskownie sporządzać skomplikowane
+                            kosztorysy wieloetapowych robót wykończeniowych w budownictwie.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-car-front"></i> Serwisy ASO</span>
-                            <span class="tech-pill"><i class="bi bi-shield-check"></i> Diagnosta</span>
+                            <span class="tech-pill"><i class="bi bi-cash"></i> Kosztorysy</span>
+                            <span class="tech-pill"><i class="bi bi-bar-chart"></i> Kalkulacje</span>
                         </div>
                     </div>
                 </div>
@@ -307,15 +312,14 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-clipboard2-data"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-people"></i></div>
                     <div class="feature-content">
-                        <h3>Zarządzanie i organizacja</h3>
-                        <p class="mb-1">Poza wiedzą techniczną, przygotujemy Cię do zarządzania procesami napraw,
-                            nadzorowania zespołów pracowników, a także do profesjonalnej pracy w biurze obsługi klienta
-                            w serwisie samochodowym.</p>
+                        <h3>Zarządzanie Zespołem</h3>
+                        <p class="mb-1">Rozwiniesz kluczowe kompetencje z mądrego zarządzania swoim czasem oraz
+                            podwykonawcami, skutecznie koordynując różnorodne prace remontowe i adaptacyjne.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-diagram-3"></i> Organizacja</span>
-                            <span class="tech-pill"><i class="bi bi-person-workspace"></i> Kadra zarządzająca</span>
+                            <span class="tech-pill"><i class="bi bi-diagram-3"></i> Koordynacja</span>
+                            <span class="tech-pill"><i class="bi bi-person-gear"></i> Zarządzanie</span>
                         </div>
                     </div>
                 </div>
@@ -323,15 +327,14 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-mortarboard"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-building-up"></i></div>
                     <div class="feature-content">
-                        <h3>Matura i prawo do studiów</h3>
-                        <p class="mb-1">Szkoła branżowa II stopnia to nie tylko bezstresowy rozwój zawodowy. Po
-                            ukończeniu nauki będziesz w pełni przygotowany do matury, co otworzy Ci furtkę na
-                            najbardziej prestiżowe uczelnie wyższe.</p>
+                        <h3>Pewne zatrudnienie</h3>
+                        <p class="mb-1">Znajdziesz świetnie płatną pracę w znanych biurach projektowych, administracji
+                            nieruchomościami lub bez problemu otworzysz od razu własną dochodową działalność.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-book"></i> Egzamin Dojrzałości</span>
-                            <span class="tech-pill"><i class="bi bi-bank"></i> Studia</span>
+                            <span class="tech-pill"><i class="bi bi-briefcase"></i> Własna firma</span>
+                            <span class="tech-pill"><i class="bi bi-buildings"></i> Administracja</span>
                         </div>
                     </div>
                 </div>
@@ -344,27 +347,28 @@
                 <h3 class="section-title" style="margin-bottom: 6px;">Zdobywasz nową kwalifikację kierowniczą:</h3>
             </div>
 
-            <div class="col-8">
+            <div class="col-7">
                 <div class="qual-card h-100">
                     <div class="d-flex align-items-center mb-1">
-                        <div class="qual-badge mb-0 me-2" style="background-color: #06B6D4;">MOT.06</div>
-                        <div class="qual-badge mb-0" style="background-color: #134659;">ZAWÓD TECHNIKA</div>
+                        <div class="qual-badge mb-0 me-2" style="background-color: #F97316;">BUD.25</div>
+                        <div class="qual-badge mb-0" style="background-color: #1E293B;">DYPLOM TECHNIKA</div>
                     </div>
                     <p class="qual-text mt-2">
-                        Zdajesz państwowy egzamin nadający uprawnienia do "Organizacji i prowadzenia procesu obsługi
-                        pojazdów samochodowych". Uzyskany dyplom znacząco poszerza Twoje możliwości rynkowe o stanowiska
-                        takie jak menedżer serwisu, czy uprawniony diagnosta techniczny na SKP.
+                        Zdajesz egzamin państwowy: "Organizacja, kontrola i sporządzanie kosztorysów robót
+                        wykończeniowych w budownictwie". Uzyskujesz tytuł zawodowy i solidne prawo do wykonywania
+                        całkowicie samodzielnych nadzorów i wycen budowlanych na rynku pracy.
                     </p>
                 </div>
             </div>
 
-            <div class="col-4">
+            <div class="col-5">
                 <div class="qr-card">
-                    <img src="assets/qr_code_school_1772624518877.png" alt="Kod z rekrutacją" class="qr-image mx-0 mb-2"
+                    <img src="assets/qr_code_school_1772624518877.png" alt="Kod z rekrutacją" class="qr-image"
                         onerror="this.src='assets/qr_code_it.png'">
                     <div class="qr-content">
-                        <h4>Zeskanuj kod!</h4>
-                        <p class="mb-0">Dowiedz się więcej i zostań prawdziwym profesjonalistą!</p>
+                        <h4>Dołącz do nas!</h4>
+                        <p>Dowiedz się więcej o kierunku i dołącz do innowacyjnej klasy pod patronatem REX-BUD & ATLAS.
+                        </p>
                     </div>
                 </div>
             </div>
