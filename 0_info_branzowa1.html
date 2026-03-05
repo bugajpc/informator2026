@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branżowa Szkoła I Stopnia - Informacje (Druk A5)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        @page {
+            size: A5;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #2D3748;
+            margin: 0 auto;
+            width: 148mm;
+            height: 210mm;
+            padding: 8mm;
+            font-size: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container-a5 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Typography & Hero */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #134659;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        .hero-text {
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            color: #134659;
+            text-align: center;
+        }
+
+        .text-profession {
+            color: #F97316;
+            /* Industrial Orange */
+        }
+
+        .lead {
+            font-size: 9.5px;
+            font-weight: 500;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        /* Badges & Tags */
+        .primary-badge {
+            display: inline-block;
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 3px 6px;
+            border-radius: 4px;
+            background-color: #D9231D;
+            color: #FFFFFF;
+            margin-right: 4px;
+            margin-bottom: 6px;
+        }
+
+        /* Hero Image */
+        .hero-image {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: #134659;
+            border-bottom: 2px solid #F0F4F8;
+            padding-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Kierunki List */
+        .profession-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profession-item {
+            display: flex;
+            align-items: center;
+            background-color: #F0F4F8;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 11px;
+            color: #134659;
+            flex-grow: 1;
+        }
+
+        .profession-item i {
+            color: #F97316;
+            /* Industrial Orange */
+            font-size: 14px;
+            margin-right: 8px;
+        }
+
+        /* Timeline / Terminy Rekrutacji */
+        .timeline {
+            position: relative;
+            margin-top: 5px;
+            margin-left: 14px;
+            /* margines całego modułu listującego z lewej */
+            padding-bottom: 2px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            /* Pozycja głównej linii */
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E2E8F0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 8px;
+            padding: 10px 10px;
+            border-radius: 6px;
+        }
+
+        .timeline-item {
+            background-color: #F1F5F9;
+            /* Slate 100 - delikatny szary */
+        }
+
+        .timeline-date {
+            font-weight: 800;
+            color: #134659;
+            font-size: 9px;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        .timeline-desc {
+            font-size: 8.5px;
+            color: #2D3748;
+            line-height: 1.35;
+        }
+
+        /* Wyróżnienia ważnych dat */
+        .highlight-blue {
+            background-color: #FFF7ED !important;
+            /* Jasny pomarańcz (zamiast niebieskiego, dla zgodności z I stopniem) */
+            border-left: 3px solid #F97316;
+        }
+
+        .highlight-green {
+            background-color: #DCFCE7 !important;
+            /* Jasnozielony */
+            border-left: 3px solid #10B981;
+        }
+
+        /* Utility */
+        .mb-sec {
+            margin-bottom: 24px;
+        }
+
+        .row-tight {
+            margin-left: -4px;
+            margin-right: -4px;
+        }
+
+        .row-tight>[class*="col-"] {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-a5">
+        <!-- Hero Section -->
+        <div class="row row-tight mb-2">
+            <div class="col-12 text-center">
+                <span class="primary-badge bg-dark border-0 mb-2" style="background-color: #1E293B !important;"><i
+                        class="bi bi-tools me-1"></i> PRAKTYCZNA NAUKA ZAWODU</span>
+                <h1 class="hero-text">SZKOŁA BRANŻOWA <br><span class="text-profession">I STOPNIA</span></h1>
+                <p class="lead mt-1 px-3">
+                    Jesteśmy 3-letnią szkołą ponadpodstawową, w której nauka nastawiona jest na praktyczne przygotowanie
+                    do zawodu. Ukończenie szkoły daje wykształcenie zasadnicze branżowe i umożliwia uzyskanie
+                    <strong>dyplomu zawodowego</strong> po zdaniu egzaminu w danym zawodzie, co pozwala na szybkie
+                    podjęcie pracy lub dalsze kształcenie w szkole II stopnia.
+                </p>
+            </div>
+        </div>
+
+        <!-- Kierunki Section -->
+        <h2 class="section-title mt-2"><i class="bi bi-compass"></i> Oferujemy Kształcenie W Zawodach</h2>
+        <div class="row row-tight mb-sec">
+            <div class="col-6 profession-col">
+                <div class="profession-item">
+                    <i class="bi bi-car-front"></i> Mechanik pojazdów samochodowych
+                </div>
+                <div class="profession-item" style="margin-bottom: 0;">
+                    <i class="bi bi-lightning-charge"></i> Elektryk
+                </div>
+            </div>
+            <div class="col-6 profession-col">
+                <div class="profession-item">
+                    <i class="bi bi-bricks"></i> Monter zabudowy i robót wykończeniowych w budownictwie
+                </div>
+                <div class="profession-item" style="margin-bottom: 0;">
+                    <i class="bi bi-scissors"></i> Fryzjer z elementami wizażu
+                </div>
+            </div>
+        </div>
+
+        <!-- Rekrutacja Section -->
+        <h2 class="section-title"><i class="bi bi-calendar-check"></i> Terminy Rekrutacji 2026</h2>
+        <div class="timeline flex-grow-1">
+
+            <div class="timeline-item highlight-blue">
+                <span class="timeline-date">27.04.2026 – 21.05.2026 (godz. 15:00)</span>
+                <p class="timeline-desc fw-semibold text-dark">Złożenie wniosku o przyjęcie do szkół ponadpodstawowych.
+                </p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">do 28.05.2026</span>
+                <p class="timeline-desc">Weryfikacja złożonych wniosków oraz dokumentów przez szkolną komisję
+                    rekrutacyjną.</p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">03.07.2026</span>
+                <p class="timeline-desc">Ogłoszenie ogólnopolskich wyników egzaminu ósmoklasisty.</p>
+            </div>
+
+            <div class="timeline-item px-2 highlight-blue">
+                <span class="timeline-date">03.07.2026 – 08.07.2026 (godz. 15:00)</span>
+                <p class="timeline-desc fw-semibold text-dark">Uzupełnienie wniosku o przyjęcie do szkoły o kopię
+                    świadectwa ukończenia szkoły
+                    podstawowej oraz kopię zaświadczenia o wynikach egzaminu.</p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">15.07.2026 (do godz. 12:00)</span>
+                <p class="timeline-desc">Podanie do wiadomości listy kandydatów zakwalifikowanych
+                    i niezakwalifikowanych.</p>
+            </div>
+
+            <div class="timeline-item highlight-blue">
+                <span class="timeline-date">15.07.2026 (godz. 12:00) – 20.07.2026</span>
+                <p class="timeline-desc fw-semibold text-dark">Potwierdzenie woli podjęcia nauki (przez rodzica lub
+                    pełnoletniego kandydata) poprzez przedłożenie oryginału świadectwa i zaświadczenia o wynikach z
+                    egzaminu.</p>
+            </div>
+
+            <div class="timeline-item highlight-green mb-0">
+                <span class="timeline-date">21.07.2026 (do godz. 12:00)</span>
+                <p class="timeline-desc fw-bold text-dark">Podanie do wiadomości ostatecznej listy kandydatów przyjętych
+                    i nieprzyjętych.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

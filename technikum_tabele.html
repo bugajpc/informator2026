@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technikum - Tabele Rekrutacyjne (Druk A5)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        @page {
+            size: A5;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #2D3748;
+            margin: 0 auto;
+            width: 148mm;
+            height: 210mm;
+            padding: 8mm;
+            font-size: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container-a5 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Typography & Hero */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #134659;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        .hero-text {
+            font-weight: 800;
+            font-size: 22px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            color: #134659;
+            text-align: center;
+        }
+
+        .text-profession {
+            color: #06B6D4;
+        }
+
+        .section-title {
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: #134659;
+            border-bottom: 2px solid #F0F4F8;
+            padding-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Tables styling */
+        .table-custom {
+            font-size: 8px;
+            line-height: 1.35;
+            margin-bottom: 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .table-custom th {
+            background-color: #134659 !important;
+            color: #FFFFFF !important;
+            font-weight: 700;
+            text-align: center;
+            vertical-align: middle;
+            border: none;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            /* Delicate header separator */
+            padding: 6px 5px;
+        }
+
+        .table-custom th:last-child {
+            border-right: none;
+        }
+
+        .table-custom td {
+            vertical-align: middle;
+            border-top: 1px solid #E2E8F0;
+            border-bottom: none;
+            border-left: none;
+            border-right: 1px solid rgba(226, 232, 240, 0.5);
+            /* Very delicate column separator */
+            padding: 6px 5px;
+        }
+
+        .table-custom td:last-child {
+            border-right: none;
+        }
+
+        .table-custom tbody tr:nth-of-type(even) td {
+            background-color: #F8FAFC !important;
+            /* Subtle but visible zebra striping */
+        }
+
+        .fw-bold {
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-a5">
+        <div class="row mb-3">
+            <div class="col-12 text-center mt-2">
+                <h1 class="hero-text">TABELE REKRUTACYJNE <br><span class="text-profession">TECHNIKUM</span></h1>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-custom">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">Lp.</th>
+                        <th style="width: 33%;">KIERUNEK KSZTAŁCENIA SYMBOL ODDZIAŁU</th>
+                        <th style="width: 24%;">Przedmioty z rozszerzonym programem nauczania</th>
+                        <th style="width: 10%;">Języki obce</th>
+                        <th style="width: 28%;">Przedmioty uwzględniane w procesie rekrutacji</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">1.</td>
+                        <td><strong>Technik informatyk</strong> - TIp</td>
+                        <td>- MATEMATYKA<br>- JĘZYK ANGIELSKI</td>
+                        <td class="text-center">angielski<br>niemiecki</td>
+                        <td>j. polski, j. angielski lub j. niemiecki, matematyka, informatyka</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2.</td>
+                        <td><strong>Technik programista Full Stack</strong> - TPAp<br><em
+                                style="font-size: 7.5px; color: #4A5568;">(klasa dwujęzyczna - matematyka i przedmioty
+                                zawodowe prowadzone są w języku angielskim)</em></td>
+                        <td>- MATEMATYKA<br>- JĘZYK ANGIELSKI</td>
+                        <td class="text-center">angielski<br>niemiecki</td>
+                        <td>j. polski, j. angielski, matematyka, informatyka</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3.</td>
+                        <td><strong>Technik robotyk</strong> – TRp<br><em
+                                style="font-size: 7.5px; color: #4A5568;">(klasa dwujęzyczna - matematyka i przedmioty
+                                zawodowe prowadzone są w języku angielskim)</em></td>
+                        <td>- MATEMATYKA<br>- FIZYKA</td>
+                        <td class="text-center">angielski<br>niemiecki</td>
+                        <td>j. polski, j. angielski lub j. niemiecki, matematyka, fizyka lub informatyka</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4.</td>
+                        <td><strong>Technik urządzeń i systemów energetyki odnawialnej</strong> - TUp</td>
+                        <td>- MATEMATYKA<br>- GEOGRAFIA</td>
+                        <td class="text-center">angielski<br>niemiecki</td>
+                        <td>j. polski, j. angielski lub j. niemiecki, matematyka, chemia lub fizyka</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">5.</td>
+                        <td><strong>Technik elektryk</strong> - TEp</td>
+                        <td>- MATEMATYKA<br>- FIZYKA</td>
+                        <td class="text-center">angielski<br>niemiecki</td>
+                        <td>j. polski, j. angielski lub j. niemiecki, matematyka, fizyka</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">6.</td>
+                        <td><strong>Technik budownictwa</strong> - TBp</td>
+                        <td>- MATEMATYKA<br>- CHEMIA</td>
+                        <td class="text-center">angielski<br>niemiecki</td>
+                        <td>j. polski, j. angielski lub j. niemiecki, matematyka, fizyka lub chemia</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">7.</td>
+                        <td><strong>Technik logistyk</strong> - TLp</td>
+                        <td>- MATEMATYKA<br>- JĘZYK ANGIELSKI</td>
+                        <td class="text-center">angielski<br>niemiecki</td>
+                        <td>j. polski, j. angielski lub j. niemiecki, matematyka, geografia</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">8.</td>
+                        <td><strong>Technik geodeta</strong> - TGp</td>
+                        <td>- MATEMATYKA<br>- FIZYKA</td>
+                        <td class="text-center">angielski<br>niemiecki</td>
+                        <td>j. polski, j. angielski lub j. niemiecki, matematyka, chemia lub fizyka</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branżowa Szkoła II Stopnia - Informacje (Druk A5)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        @page {
+            size: A5;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #2D3748;
+            margin: 0 auto;
+            width: 148mm;
+            height: 210mm;
+            padding: 8mm;
+            font-size: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container-a5 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Typography & Hero */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #134659;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        .hero-text {
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            color: #134659;
+            text-align: center;
+        }
+
+        .text-profession {
+            color: #F97316;
+            /* Industrial Orange */
+        }
+
+        .badge-new {
+            background-color: #D9231D;
+            color: #FFFFFF;
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-left: 8px;
+            position: relative;
+            top: -3px;
+        }
+
+        .lead {
+            font-size: 8.5px;
+            font-weight: 500;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        .box-intro {
+            background-color: #F1F5F9;
+            border-left: 3px solid #134659;
+            padding: 6px 8px;
+            border-radius: 0 4px 4px 0;
+            margin-bottom: 6px;
+        }
+
+        .box-outcome {
+            background-color: #FFF7ED;
+            border-left: 3px solid #F97316;
+            padding: 6px 8px;
+            border-radius: 0 4px 4px 0;
+            margin-top: 6px;
+        }
+
+        .custom-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 5px;
+            margin-bottom: 6px;
+        }
+
+        .custom-list li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 4px;
+        }
+
+
+        .section-title {
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            color: #134659;
+            border-bottom: 2px solid #F0F4F8;
+            padding-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Kierunki List */
+        .profession-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profession-item {
+            display: flex;
+            align-items: center;
+            background-color: #F0F4F8;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            padding: 8px 10px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 10.5px;
+            color: #134659;
+            flex-grow: 1;
+        }
+
+        .profession-item i {
+            color: #F97316;
+            /* Industrial Orange */
+            font-size: 14px;
+            margin-right: 8px;
+        }
+
+        /* Timeline / Terminy Rekrutacji */
+        .timeline {
+            position: relative;
+            margin-top: 5px;
+            margin-left: 14px;
+            /* margines całego modułu listującego z lewej */
+            padding-bottom: 2px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            /* Pozycja głównej linii */
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E2E8F0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 5px;
+            padding: 7px 8px;
+            border-radius: 6px;
+        }
+
+        .timeline-item {
+            background-color: #F1F5F9;
+            /* Slate 100 - delikatny szary */
+        }
+
+        .timeline-date {
+            font-weight: 800;
+            color: #134659;
+            font-size: 8.5px;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        .timeline-desc {
+            font-size: 8px;
+            color: #2D3748;
+            line-height: 1.3;
+        }
+
+        /* Wyróżnienia ważnych dat */
+        .highlight-blue {
+            background-color: #FFF7ED !important;
+            /* Jasny pomarańcz */
+            border-left: 3px solid #F97316;
+        }
+
+        .highlight-green {
+            background-color: #DCFCE7 !important;
+            /* Jasnozielony */
+            border-left: 3px solid #10B981;
+        }
+
+        /* Utility */
+        .mb-sec {
+            margin-bottom: 12px;
+        }
+
+        .row-tight {
+            margin-left: -4px;
+            margin-right: -4px;
+        }
+
+        .row-tight>[class*="col-"] {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-a5">
+        <!-- Hero Section -->
+        <div class="row row-tight mb-2">
+            <div class="col-12 text-center">
+                <span class="badge fw-bold badge-new"><i class="bi bi-star-fill me-1"></i> NOWOŚĆ</span>
+                <h1 class="hero-text mt-1">SZKOŁA BRANŻOWA <br><span class="text-profession">II STOPNIA</span> </h1>
+
+                <div class="lead mt-2 px-1">
+                    <div class="box-intro">
+                        <p>W roku szkolnym 2026/2027 prowadzony będzie nabór do branżowej szkoły II stopnia. Jest to typ
+                            szkoły ponadpodstawowej kształcącej w cyklu <strong>2-letnim</strong>.</p>
+                    </div>
+                    <p>Do branżowej szkoły II stopnia przyjmuje się kandydatów, którzy ukończyli branżową
+                        szkołę I stopnia w okresie 5 lat szkolnych poprzedzających rok szkolny, na który ubiegają się o
+                        przyjęcie i którzy:</p>
+                    <ul class="custom-list">
+                        <li><i class="bi bi-check-circle-fill text-success"
+                                style="position: absolute; left: 0; top: 1.5px; font-size: 8px;"></i> <strong>posiadają
+                                świadectwo ukończenia branżowej szkoły I stopnia;</strong></li>
+                        <li><i class="bi bi-check-circle-fill text-success"
+                                style="position: absolute; left: 0; top: 1.5px; font-size: 8px;"></i> <strong>posiadają
+                                zaświadczenie o zawodzie nauczanym w branżowej szkole I stopnia, którego zakres
+                                odpowiada pierwszej kwalifikacji wyodrębnionej w zawodzie nauczanym w branżowej szkole
+                                II
+                                stopnia, do której ubiegają się o przyjęcie;</strong></li>
+                        <li><i class="bi bi-check-circle-fill text-success"
+                                style="position: absolute; left: 0; top: 1.5px; font-size: 8px;"></i> <strong>posiadają
+                                odpowiednie zaświadczenie lekarskie o braku przeciwwskazań do kształcenia w
+                                zawodzie.</strong></li>
+                    </ul>
+                    <p style="color: #4A5568; font-size: 8px; line-height: 1.3;"><em>Kształcenie zawodowe realizowane
+                            jest w zakresie kwalifikacji wyodrębnionej dla zawodu na
+                            poziomie technikum w oparciu o kwalifikację wspólną wyodrębnioną dla zawodu nauczanego w
+                            branżowej szkole I i II stopnia.</em></p>
+                    <div class="box-outcome">
+                        <p>Ukończenie branżowej szkoły II stopnia umożliwia uzyskanie <strong>dyplomu
+                                zawodowego w zawodzie nauczanym na poziomie technika</strong>, po zdaniu egzaminu
+                            zawodowego
+                            w danym zawodzie, oraz uzyskanie świadectwa dojrzałości po zdaniu egzaminu maturalnego, a
+                            następnie kontynuację nauki na studiach.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kierunki Section -->
+        <h2 class="section-title mt-1"><i class="bi bi-compass"></i> Nabór prowadzony jest w zawodach:</h2>
+        <div class="row row-tight mb-sec">
+            <div class="col-6 profession-col">
+                <div class="profession-item">
+                    <i class="bi bi-car-front"></i> Technik pojazdów samochodowych
+                </div>
+                <div class="profession-item" style="margin-bottom: 0;">
+                    <i class="bi bi-lightning-charge"></i> Technik elektryk
+                </div>
+            </div>
+            <div class="col-6 profession-col">
+                <div class="profession-item">
+                    <i class="bi bi-bricks"></i> Technik robót wykończeniowych w budownictwie
+                </div>
+                <div class="profession-item" style="margin-bottom: 0;">
+                    <i class="bi bi-scissors"></i> Technik usług fryzjerskich z elementami wizażu
+                </div>
+            </div>
+        </div>
+
+        <!-- Rekrutacja Section -->
+        <h2 class="section-title"><i class="bi bi-calendar-check"></i> Terminy Rekrutacji 2026</h2>
+        <div class="timeline flex-grow-1">
+
+            <div class="timeline-item highlight-blue">
+                <span class="timeline-date">14.05.2026 – 12.06.2026 (godz. 15:00)</span>
+                <p class="timeline-desc fw-semibold text-dark">Złożenie wniosku o przyjęcie do szkoły.</p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">do 08.07.2026</span>
+                <p class="timeline-desc">Uzupełnienie wniosku o przyjęcie do szkoły o świadectwo ukończenia szkoły.</p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">do 10.07.2026</span>
+                <p class="timeline-desc">Weryfikacja przez komisję rekrutacyjną złożonych wniosków oraz dokumentów.</p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">14.07.2026 (do godz. 12:00)</span>
+                <p class="timeline-desc">Podanie do wiadomości listy kandydatów zakwalifikowanych
+                    i niezakwalifikowanych.</p>
+            </div>
+
+            <div class="timeline-item highlight-blue">
+                <span class="timeline-date">14.07.2026 (godz. 12:00) – 17.07.2026</span>
+                <p class="timeline-desc fw-semibold text-dark">Potwierdzenie woli podjęcia nauki w postaci przedłożenia
+                    oryginału świadectwa ukończenia szkoły I stopnia oraz zaświadczenia o zawodzie.</p>
+            </div>
+
+            <div class="timeline-item highlight-green mb-0">
+                <span class="timeline-date">20.07.2026 (do godz. 12:00)</span>
+                <p class="timeline-desc fw-bold text-dark">Podanie do wiadomości ostatecznej listy kandydatów przyjętych
+                    i nieprzyjętych.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

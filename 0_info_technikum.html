@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technikum Innowacji - Informacje (Druk A5)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        @page {
+            size: A5;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #2D3748;
+            margin: 0 auto;
+            width: 148mm;
+            height: 210mm;
+            padding: 8mm;
+            font-size: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container-a5 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Typography & Hero */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #134659;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        .hero-text {
+            font-weight: 800;
+            font-size: 22px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            color: #134659;
+            text-align: center;
+        }
+
+        .text-profession {
+            color: #06B6D4;
+        }
+
+        .lead {
+            font-size: 9.5px;
+            font-weight: 500;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        /* Badges & Tags */
+        .primary-badge {
+            display: inline-block;
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 3px 6px;
+            border-radius: 4px;
+            background-color: #D9231D;
+            color: #FFFFFF;
+            margin-right: 4px;
+            margin-bottom: 6px;
+        }
+
+        .badge-unique {
+            background-color: #F59E0B;
+            /* Amber/Gold for "JEDYNY W POLSCE" */
+        }
+
+        .badge-new {
+            background-color: #D9231D;
+            /* Red for "NOWOŚĆ" */
+        }
+
+        .section-title {
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: #134659;
+            border-bottom: 2px solid #F0F4F8;
+            padding-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Kierunki List */
+        .profession-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profession-item {
+            display: flex;
+            align-items: center;
+            background-color: #F0F4F8;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            padding: 5px 8px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 9px;
+            color: #134659;
+            flex-grow: 1;
+            /* Wypełnianie dostępnej wysokości na flex */
+        }
+
+        .profession-item i {
+            color: #06B6D4;
+            font-size: 12px;
+            margin-right: 6px;
+        }
+
+        .profession-item .badge {
+            font-size: 7px;
+            margin-left: auto;
+            padding: 2px 4px;
+        }
+
+        /* Timeline / Terminy Rekrutacji */
+        .timeline {
+            position: relative;
+            margin-top: 5px;
+            margin-left: 14px;
+            /* margines całego modułu listującego z lewej */
+            padding-bottom: 2px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            /* Pozycja głównej linii */
+            top: 0;
+            /* Zaczynamy tuż pod pierwszym punktem */
+            bottom: 12px;
+            /* Kończymy by nie odstawała z dołu */
+            width: 2px;
+            background-color: #E2E8F0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4px;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        .timeline-item {
+            background-color: #F1F5F9;
+            /* Slate 100 - delikatny szary */
+        }
+
+        .timeline-date {
+            font-weight: 800;
+            color: #134659;
+            font-size: 9px;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        .timeline-desc {
+            font-size: 8.5px;
+            color: #2D3748;
+            line-height: 1.3;
+        }
+
+        /* Wyróżnienia ważnych dat */
+        .highlight-blue {
+            background-color: #E0F2FE !important;
+            /* Jasnoniebieski */
+            border-left: 3px solid #0EA5E9;
+        }
+
+        .highlight-green {
+            background-color: #DCFCE7 !important;
+            /* Jasnozielony */
+            border-left: 3px solid #10B981;
+        }
+
+        /* Utility */
+        .mb-sec {
+            margin-bottom: 12px;
+        }
+
+        .row-tight {
+            margin-left: -4px;
+            margin-right: -4px;
+        }
+
+        .row-tight>[class*="col-"] {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-a5">
+        <!-- Hero Section -->
+        <div class="row row-tight mb-3">
+            <div class="col-12 text-center">
+                <span class="primary-badge bg-dark border-0 mb-2"><i class="bi bi-mortarboard-fill me-1"></i> EDUKACJA
+                    PRZYSZŁOŚCI</span>
+                <h1 class="hero-text">TECHNIKUM <span class="text-profession">INNOWACJI</span><br><span
+                        style="font-size: 14px;">Z ODDZIAŁAMI DWUJĘZYCZNYMI</span></h1>
+                <p class="lead mt-1 px-3">
+                    Jesteśmy nowoczesną 5-letnią szkołą ponadpodstawową łączącą z sukcesem kształcenie ogólne z
+                    zawodowym. Uzyskasz u nas <strong>świadectwo dojrzałości</strong> oraz <strong>dyplom
+                        zawodowy technika</strong>, otwierając sobie drogę na prestiżowe studia wyższe lub bezpośrednio
+                    do pracy w wymarzonym zawodzie.
+                </p>
+            </div>
+        </div>
+
+        <!-- Kierunki Section -->
+        <h2 class="section-title"><i class="bi bi-compass"></i> Nasze Kierunki</h2>
+        <div class="row row-tight mb-sec">
+            <div class="col-6 profession-col">
+                <div class="profession-item">
+                    <i class="bi bi-pc-display"></i> Technik informatyk
+                </div>
+                <div class="profession-item">
+                    <i class="bi bi-code-slash"></i> Technik programista <br>Full Stack
+                    <span class="badge badge-unique">KLASA DWUJĘZYCZNA</span>
+                </div>
+                <div class="profession-item">
+                    <i class="bi bi-robot"></i> Technik robotyk
+                    <span class="badge badge-unique">KLASA DWUJĘZYCZNA</span>
+                </div>
+                <div class="profession-item" style="margin-bottom: 0;">
+                    <i class="bi bi-sun"></i> Technik urządzeń OZE
+                </div>
+            </div>
+            <div class="col-6 profession-col">
+                <div class="profession-item">
+                    <i class="bi bi-lightning-charge"></i> Technik elektryk
+                </div>
+                <div class="profession-item">
+                    <i class="bi bi-bricks"></i> Technik budownictwa
+                </div>
+                <div class="profession-item">
+                    <i class="bi bi-box-seam"></i> Technik logistyk
+                </div>
+                <div class="profession-item" style="margin-bottom: 0;">
+                    <i class="bi bi-geo-alt"></i> Technik geodeta
+                    <span class="badge badge-new">NOWOŚĆ</span>
+                </div>
+            </div>
+            <!-- Notatka o klasach dwujęzycznych -->
+            <div class="col-12 mt-1">
+                <p style="font-size: 8px; color: #4A5568; font-style: italic; text-align: center;">Klasy kształcące w
+                    zawodach <strong>Technik programista</strong> oraz <strong>Technik robotyk</strong> to klasy
+                    dwujęzyczne!</p>
+            </div>
+        </div>
+
+        <!-- Rekrutacja Section -->
+        <h2 class="section-title"><i class="bi bi-calendar-check"></i> Terminy Rekrutacji 2026</h2>
+        <div class="timeline flex-grow-1">
+
+            <div class="timeline-item highlight-blue">
+                <span class="timeline-date">27.04.2026 – 21.05.2026 (godz. 15:00)</span>
+                <p class="timeline-desc fw-semibold text-dark">Złożenie wniosku o przyjęcie do szkół ponadpodstawowych.
+                </p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">do 28.05.2026</span>
+                <p class="timeline-desc">Weryfikacja złożonych wniosków oraz dokumentów przez szkolną komisję
+                    rekrutacyjną.</p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">08.06.2026 (godz.
+                    16:00)</span>
+                <p class="timeline-desc">Przeprowadzenie sprawdzianu kompetencji językowych (dla
+                    klas dwujęzycznych).</p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">03.07.2026</span>
+                <p class="timeline-desc">Ogłoszenie ogólnopolskich wyników egzaminu ósmoklasisty.</p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">03.07.2026 – 08.07.2026 (godz. 15:00)</span>
+                <p class="timeline-desc">Uzupełnienie wniosku o przyjęcie do szkoły o kopię świadectwa ukończenia szkoły
+                    podstawowej oraz kopię zaświadczenia o wynikach egzaminu.</p>
+            </div>
+
+            <div class="timeline-item px-2">
+                <span class="timeline-date">15.07.2026 (do godz. 12:00)</span>
+                <p class="timeline-desc">Podanie do wiadomości listy kandydatów zakwalifikowanych
+                    i niezakwalifikowanych.</p>
+            </div>
+
+            <div class="timeline-item highlight-blue">
+                <span class="timeline-date">15.07.2026 (godz. 12:00) – 20.07.2026</span>
+                <p class="timeline-desc fw-semibold text-dark">Potwierdzenie woli podjęcia nauki (przez rodzica lub
+                    pełnoletniego kandydata)
+                    poprzez przedłożenie oryginału świadectwa i zaświadczenia o wynikach z egzaminu.</p>
+            </div>
+
+            <div class="timeline-item highlight-green mb-0">
+                <span class="timeline-date">21.07.2026 (do godz. 12:00)</span>
+                <p class="timeline-desc fw-bold text-dark">Podanie do wiadomości ostatecznej listy kandydatów przyjętych
+                    i
+                    nieprzyjętych.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
