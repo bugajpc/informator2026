@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technik Logistyk - Informator (Druk A5)</title>
+    <title>Monter Zabudowy - Informator (Druk A5)</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Inter -->
@@ -28,16 +28,13 @@
             width: 148mm;
             height: 210mm;
             padding: 8mm;
-            /* Odpowiednie marginesy dla drukarki */
             font-size: 10px;
             box-sizing: border-box;
             overflow: hidden;
-            /* Ciasne trzymanie zawartości */
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         }
 
-        /* Hack żeby nie uciekało paddingiem */
         .container-a5 {
             width: 100%;
             height: 100%;
@@ -52,7 +49,8 @@
         h4,
         h5,
         h6 {
-            color: #134659;
+            color: #1E293B;
+            /* Slate Navy */
             margin-top: 0;
         }
 
@@ -63,15 +61,16 @@
 
         .hero-text {
             font-weight: 800;
-            font-size: 26px;
+            font-size: 24px;
             line-height: 1.05;
             letter-spacing: -1px;
             margin-bottom: 8px;
-            color: #134659;
+            color: #1E293B;
         }
 
         .text-profession {
-            color: #06B6D4;
+            color: #F97316;
+            /* Industrial Orange */
         }
 
         .lead {
@@ -111,7 +110,7 @@
         .tech-pill i {
             margin-right: 3px;
             font-size: 9px;
-            color: #134659;
+            color: #1E293B;
         }
 
         /* Hero Image */
@@ -140,10 +139,10 @@
             flex-shrink: 0;
             width: 32px;
             height: 32px;
-            border-radius: 6px;
+            border-radius: 50%;
             background-color: #F0F4F8;
             border: 1px solid #E2E8F0;
-            color: #134659;
+            color: #1E293B;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -155,7 +154,7 @@
             font-size: 12px;
             font-weight: 700;
             margin-bottom: 3px;
-            color: #134659;
+            color: #1E293B;
         }
 
         .feature-content p {
@@ -179,7 +178,7 @@
         .qual-badge {
             font-size: 8px;
             font-weight: 700;
-            background-color: #134659;
+            background-color: #1E293B;
             color: #FFFFFF;
             padding: 3px 6px;
             border-radius: 4px;
@@ -206,15 +205,15 @@
         }
 
         .qr-image {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 8px;
             object-fit: cover;
             margin-right: 10px;
         }
 
         .qr-content h4 {
-            color: #134659;
+            color: #1E293B;
             font-size: 10px;
             font-weight: 700;
             margin-bottom: 2px;
@@ -248,20 +247,24 @@
         <!-- Hero Section -->
         <div class="row row-tight align-items-center mb-sec">
             <div class="col-6">
-
-                <h1 class="hero-text mt-1 mb-1">TECHNIK <br><span class="text-profession">LOGISTYK</span></h1>
-                <span class="primary-badge bg-dark border-0 mb-3"><i class="bi bi-award-fill me-1"></i> PATRONAT
-                    FIRMY GEIS</span>
-                <p class="lead">
-                    Logistyka to branża, która w zglobalizowanym świecie odgrywa coraz większą rolę, w konsekwencji
-                    logistycy są jednymi z najbardziej poszukiwanych pracowników na rynku pracy. To doskonała propozycja
-                    dla osób zainteresowanych funkcjonowaniem nowoczesnej gospodarki oraz organizacją i nadzorowaniem
-                    procesów logistycznych.
-                </p>
+                <!-- Zdjęcie wygenerowane przez AI -->
+                <img src="assets/monter_hero.png" alt="Praca montera zabudowy" class="hero-image">
+                <div class="d-flex justify-content-start flex-wrap mt-2">
+                    <span class="primary-badge"><i class="bi bi-hammer me-1"></i> PRAWA RĘKA ARCHITEKTA</span>
+                    <span class="primary-badge"><i class="bi bi-shield-check me-1"></i> GWARANCJA PRACY</span>
+                </div>
             </div>
             <div class="col-6">
-                <img src="assets/logistics_hero_student.png"
-                    alt="Uczeń technik logistyk pracujący w nowoczesnym magazynie" class="hero-image">
+                <h1 class="hero-text mt-1 mb-1">MONTER <br><span class="text-profession">ZABUDOWY</span><br> I
+                    ROBÓT<br>WYKOŃCZENIOWYCH W BUDOWNICTWIE
+                </h1>
+                <span class="primary-badge bg-dark border-0 mb-3" style="background-color: #4A5568 !important;"><i
+                        class="bi bi-award-fill me-1"></i> PATRONAT REX-BUD & ATLAS</span>
+                <p class="lead">
+                    Przygotowuje do precyzyjnego wykonywania zadań w zakresie montowania nowoczesnych systemów suchej
+                    zabudowy, a także malarskich i okładzinowych. Staniesz się najbardziej rozchwytywanym fachowcem od
+                    każdego kompleksowego wykończenia nowoczesnych wnętrz na budowach i przy remontach!
+                </p>
             </div>
         </div>
 
@@ -273,16 +276,15 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-geo-alt"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-building-check"></i></div>
                     <div class="feature-content">
-                        <h3>Rozwój w centrum Polski</h3>
-                        <p class="mb-1">Istotnym atutem kształcenia w tym zawodzie jest położenie Zgierza w centralnej
-                            części Polski, w pobliżu najważniejszych tras komunikacyjnych i węzłów transportowych.
-                            Lokalizacja ta sprzyja dynamicznemu rozwojowi firm logistycznych, centrów dystrybucyjnych i
-                            magazynów, które oferują liczne miejsca pracy dla wykwalifikowanych specjalistów.</p>
+                        <h3>Rozchwytywany na rynku fach</h3>
+                        <p class="mb-1">Budownictwo to pewna gałąź gospodarki. Po ukończeniu szkoły absolwenci są od
+                            razu atrakcyjnymi pracownikami w stabilnych firmach remontowych, projektowych i
+                            rozbiórkowych.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-diagram-2"></i> Centra dystrybucyjne</span>
-                            <span class="tech-pill"><i class="bi bi-sign-turn-right"></i> Węzły drogowe</span>
+                            <span class="tech-pill"><i class="bi bi-briefcase"></i> Oferty pracy</span>
+                            <span class="tech-pill"><i class="bi bi-person-gear"></i> Szokujący popyt</span>
                         </div>
                     </div>
                 </div>
@@ -290,17 +292,16 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-box-seam"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-tools"></i></div>
                     <div class="feature-content">
-                        <h3>Praktyczne umiejętności</h3>
-                        <p class="mb-1">Absolwent zawodu technik logistyk jest przygotowany do organizacji transportu,
-                            przyjmowania i wydawania towarów, prowadzenia dokumentacji magazynowej i transportowej, a
-                            także do obsługi nowoczesnych systemów informatycznych wykorzystywanych w branży,
-                            koordynując logistyczne filary nowoczesnych przedsiębiorstw.</p>
+                        <h3>Praktyka i szkolenia partnerskie</h3>
+                        <p class="mb-1">W trakcie trzech lat uczniowie przechodzą przez wysoce komercyjne certyfikowane
+                            kursy oraz ekskluzywne pokazy na terenie szkoły prosto od gigantów i producentów branży!</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-database"></i> Systemy IT</span>
-                            <span class="tech-pill"><i class="bi bi-clipboard-data"></i> Dokumentacja</span>
-                            <span class="tech-pill"><i class="bi bi-truck"></i> Transport</span>
+                            <span class="tech-pill"><i class="bi bi-award"></i> ATLAS</span>
+                            <span class="tech-pill"><i class="bi bi-award"></i> KNAUF</span>
+                            <span class="tech-pill"><i class="bi bi-award"></i> FAKRO</span>
+                            <span class="tech-pill"><i class="bi bi-award"></i> ŚNIEŻKA / WIENERBERGER</span>
                         </div>
                     </div>
                 </div>
@@ -308,16 +309,15 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-briefcase"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-mortarboard-fill"></i></div>
                     <div class="feature-content">
-                        <h3>Szeroki rynek zatrudnienia</h3>
-                        <p class="mb-1">Absolwent technikum znajdzie zatrudnienie w każdej dziedzinie gospodarki, m.in.
-                            może pracować w przedsiębiorstwach produkcyjnych, handlowych, usługowych, transportowych,
-                            spedycyjnych lub założyć i z powodzeniem poprowadzić własną działalność gospodarczą.</p>
+                        <h3>Wszystko na terenie szkoły</h3>
+                        <p class="mb-1">Dbamy o komfort organizacyjny ucznia i pełnią kontrolę wsparcia nad warsztatem.
+                            Zarówno zajęcia teoretycznie i bardzo bogate zajęcia praktyczne w 100% realizowane są
+                            stacjonarnie.</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-shop"></i> Handel</span>
-                            <span class="tech-pill"><i class="bi bi-airplane"></i> Spedycja</span>
-                            <span class="tech-pill"><i class="bi bi-file-earmark-person"></i> Własna firma</span>
+                            <span class="tech-pill"><i class="bi bi-house-check"></i> Szkolne Warsztaty</span>
+                            <span class="tech-pill"><i class="bi bi-book"></i> Teoria tu na miejscu</span>
                         </div>
                     </div>
                 </div>
@@ -325,17 +325,15 @@
 
             <div class="col-6">
                 <div class="feature-box">
-                    <div class="feature-icon-wrapper"><i class="bi bi-mortarboard"></i></div>
+                    <div class="feature-icon-wrapper"><i class="bi bi-arrow-up-right-circle"></i></div>
                     <div class="feature-content">
-                        <h3>Ścieżka rozwoju</h3>
-                        <p class="mb-1">Ukończenie technikum logistycznego otwiera drogę do dalszego kształcenia na
-                            uczelniach wyższych na kierunkach takich jak: logistyka, transport i spedycja, E-commerce,
-                            finanse, inżynieria środków transportu oraz nowoczesne zarządzanie i inżynieria produkcji.
-                        </p>
+                        <h3>Droga do bycia Technikiem</h3>
+                        <p class="mb-1">Szkoła branżowa daje Ci gwarantowany zawód w ręku szybciej i własną działalność.
+                            Gdy tylko uznasz, że chcesz powiększyć tytuł absolwenci lądują u nas na II Stopniu Branżówki
+                            i stają się Technikami!</p>
                         <div class="d-flex flex-wrap mt-1">
-                            <span class="tech-pill"><i class="bi bi-cart3"></i> E-commerce</span>
-                            <span class="tech-pill"><i class="bi bi-cash-coin"></i> Finanse</span>
-                            <span class="tech-pill"><i class="bi bi-plus-slash-minus"></i> Inżynieria</span>
+                            <span class="tech-pill"><i class="bi bi-capslock-fill"></i> Szkoła II Stopnia</span>
+                            <span class="tech-pill"><i class="bi bi-star"></i> Tytuł Technika</span>
                         </div>
                     </div>
                 </div>
@@ -345,35 +343,30 @@
         <!-- Bottom Section: Qualifications & CTA -->
         <div class="row row-tight mt-auto">
             <div class="col-12">
-                <h3 class="section-title" style="margin-bottom: 6px;">Zdobywasz 2 kwalifikacje:</h3>
+                <h3 class="section-title" style="margin-bottom: 6px;">Zdobywasz 1 kwalifikację i zawód:</h3>
             </div>
 
-            <div class="col-7">
-                <div class="row row-tight h-100">
-                    <div class="col-6">
-                        <div class="qual-card">
-                            <div class="qual-badge">SPL.01</div>
-                            <p class="qual-text">Obsługa magazynów.</p>
-                        </div>
+            <div class="col-8">
+                <div class="qual-card h-100">
+                    <div class="d-flex align-items-center mb-1">
+                        <div class="qual-badge mb-0 me-2" style="background-color: #F97316;">BUD.11</div>
+                        <div class="qual-badge mb-0" style="background-color: #1E293B;">Praktyczna Umiejętność</div>
                     </div>
-                    <div class="col-6">
-                        <div class="qual-card">
-                            <div class="qual-badge">SPL.04</div>
-                            <p class="qual-text">Organizacja transportu.</p>
-                        </div>
-                    </div>
+                    <p class="qual-text mt-2">
+                        Zdajesz profesjonalny egzamin państwowy uprawniający do samodzielnego wykonywania
+                        wielopłaszczyznowych robót montażowych zabudowy suchej, posadzkarskich, okładzinowych i
+                        wykończeniowych dla klientów komercyjnych.
+                    </p>
                 </div>
             </div>
 
-            <div class="col-5">
+            <div class="col-4">
                 <div class="qr-card">
-                    <!-- Jeśli jest dostępny inny kod qr mozna go uzyc, w oparciu o poprzednie generacje -->
-                    <img src="assets/qr_code_school_1772624518877.png" alt="Kod QR" class="qr-image"
+                    <img src="assets/qr_code_school_1772624518877.png" alt="Kod z rekrutacją" class="qr-image mx-0 mb-2"
                         onerror="this.src='assets/qr_code_it.png'">
                     <div class="qr-content">
                         <h4>Zeskanuj kod!</h4>
-                        <!--Napisz zdanie zachęcające do zeskanowania kodu QR -->
-                        <p>Dowiedz się więcej o naszej szkole i tym profilu. Zapisz się do nas!</p>
+                        <p class="mb-0">Dołącz do zawodowców w szkole!</p>
                     </div>
                 </div>
             </div>
