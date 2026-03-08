@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okładka - Informator (Druk A5)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Google Fonts: Roboto Slab for modern serif numerals -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        @page {
+            size: A5;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+            margin: 0;
+            padding: 0;
+            width: 148mm;
+            height: 210mm;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            overflow: hidden;
+        }
+
+        /* Tarcza/Wrapper wydruku */
+        .print-bleed-wrapper {
+            position: relative;
+            width: 148mm;
+            height: 210mm;
+            overflow: hidden;
+            background-color: #F8FAFC;
+        }
+
+        /* Minimalistyczne, ciekawe tło pod Glassmorphism */
+        .bg-shape-cyan {
+            position: absolute;
+            top: -50px;
+            left: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .bg-shape-orange {
+            position: absolute;
+            bottom: -50px;
+            right: -250px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Delikatny pattern geometryczny */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(rgba(19, 70, 89, 0.1) 1px, transparent 1px);
+            background-size: 14px 14px;
+            z-index: 2;
+        }
+
+        /* Główny kontener na treść */
+        .container-a5 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+            padding: 10mm 12mm;
+            box-sizing: border-box;
+        }
+
+        /* --- Górna sekcja z Logo (Jasny Glassmorphism) --- */
+        .glass-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            padding: 12px 14px;
+            box-shadow: 0 8px 32px rgba(30, 41, 59, 0.05);
+        }
+
+        .glass-header img {
+            height: 62px;
+            object-fit: contain;
+        }
+
+        .header-text {
+            flex-grow: 1;
+        }
+
+        .school-name {
+            font-weight: 900;
+            font-size: 16px;
+            line-height: 1.1;
+            color: #134659;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+        }
+
+        .patron {
+            font-weight: 600;
+            font-size: 10.5px;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
+        }
+
+        /* --- Główne Zdjęcie: Ukośne cięcie --- */
+        .hero-diagonal-container {
+            position: relative;
+            margin-top: 25px;
+            height: 180px;
+            /* Zwiększona wysokość */
+            width: 100%;
+            z-index: 5;
+            /* Zamiast nakładać warstwy na siebie, co psuje się w drukarce PDF,
+               tworzymy bezpośrednie tło kontenera i używamy paddingu z dołu */
+            background: linear-gradient(135deg, #06B6D4, #F97316);
+            clip-path: polygon(0 12%, 100% 0, 100% 88%, 0 100%);
+            padding-bottom: 6px;
+            /* Grubość "ramki" na dole */
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            clip-path: polygon(0 12%, 100% 0, 100% 88%, 0 100%);
+            /* Dopasowany krój */
+            display: block;
+        }
+
+        /* --- Informacyjne Plakietki (Jasny Glassmorphism) --- */
+        .school-types-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: -20px;
+            /* Najazd na zdjęcie z dołu */
+            align-items: flex-end;
+            z-index: 10;
+        }
+
+        .type-glass {
+            padding: 10px 18px;
+            /* Symetryczne zaokrąglenie w tym z prawej strony */
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid #FFFFFF;
+            /* Kolorowy, gruby akcent tylko z prawej strony */
+            border-right: 4px solid #06B6D4;
+            color: #134659;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 8px 20px rgba(19, 70, 89, 0.08);
+            text-align: right;
+        }
+
+        .type-glass.bran {
+            border-right: 4px solid #F97316;
+        }
+
+        .special-tech {
+            display: block;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #06B6D4;
+            letter-spacing: 0.2px;
+            margin-top: 3px;
+            text-transform: none;
+        }
+
+        .special-bran {
+            display: block;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #F97316;
+            letter-spacing: 0.2px;
+            margin-top: 3px;
+            text-transform: none;
+        }
+
+        .roman-numeral {
+            font-family: 'Roboto Slab', 'Rockwell', 'Courier New', serif;
+            font-size: 11.5px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* --- Ogromna Typografia na Dole --- */
+        .bottom-display {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .recruitment-tag {
+            background: linear-gradient(90deg, #F97316, #D9231D);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 900;
+            font-size: 14px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.2);
+        }
+
+        .huge-title {
+            font-size: 58px;
+            font-weight: 900;
+            color: #134659;
+            line-height: 0.85;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
+            margin: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .huge-title span.outline {
+            color: #06B6D4;
+            -webkit-text-stroke: 0px;
+        }
+
+        .motto-bottom {
+            font-size: 12px;
+            font-weight: 500;
+            color: #64748B;
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .motto-highlight {
+            color: #06B6D4;
+            font-weight: 800;
+        }
+
+        /* --- PRINT FIXES --- */
+        /* Eliminacja efektów, które bugują silnik PDF w przeglądarkach */
+        @media print {
+
+            .glass-header {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background-color: #FFFFFF !important;
+                box-shadow: none !important;
+                border: 1px solid #E2E8F0 !important;
+            }
+
+            .type-glass {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background-color: #FFFFFF !important;
+                box-shadow: none !important;
+                /* Przywrócenie 1px krawędzi dookoła + obrona prawego grubszego akcentu */
+                border-top: 1px solid #E2E8F0 !important;
+                border-bottom: 1px solid #E2E8F0 !important;
+                border-left: 1px solid #E2E8F0 !important;
+                border-right: 4px solid #06B6D4 !important;
+            }
+
+            .type-glass.bran {
+                border-right: 4px solid #F97316 !important;
+            }
+
+            .hero-img {
+                /* Fix dla problemów z clip-path w PDF */
+                transform: translateZ(0);
+                -webkit-transform: translateZ(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="print-bleed-wrapper">
+        <div class="bg-shape-cyan"></div>
+        <div class="bg-shape-orange"></div>
+        <div class="bg-pattern"></div>
+
+        <div class="container-a5">
+
+            <div class="glass-header">
+                <img src="assets/logozzsp_1_orig.png" alt="Logo ZZSP Zgierz">
+                <div class="header-text">
+                    <div class="school-name">Zgierski Zespół Szkół<br>Ponadpodstawowych</div>
+                    <div class="patron">im. Jana Pawła II</div>
+                </div>
+            </div>
+
+            <div class="hero-diagonal-container">
+                <img src="assets/cover_image_wide.png" alt="Uczniowie Innowacji" class="hero-img"
+                    onerror="this.src='assets/technikum_info_hero.png'">
+            </div>
+
+            <div class="school-types-stack">
+                <div class="type-glass">Technikum Innowacji <span class="special-tech">z oddziałami dwujęzycznymi</span>
+                </div>
+                <div class="type-glass bran">Szkoła branżowa <span class="special-bran"><span
+                            class="roman-numeral">I</span> i <span class="roman-numeral">II</span> stopnia</span></div>
+            </div>
+
+            <div class="bottom-display">
+                <div class="recruitment-tag">
+                    Rekrutacja 2026/2027
+                </div>
+                <h1 class="huge-title">INFOR<br><span class="outline">MATOR</span></h1>
+                <div class="motto-bottom">
+                    Przyszłość buduje się <span class="motto-highlight">tutaj</span>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

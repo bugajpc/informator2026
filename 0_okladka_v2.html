@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okładka V2 - Informator (Druk A5)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        @page {
+            size: A5;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #07131F;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            width: 148mm;
+            height: 210mm;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            overflow: hidden;
+        }
+
+        /* Tarcza/Wrapper wydruku */
+        .print-bleed-wrapper {
+            position: relative;
+            width: 148mm;
+            height: 210mm;
+            overflow: hidden;
+            background-image: url('assets/cover_bg_v2.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Główny kontener wewnątrz (bezpieczne marginesy dla tekstu) */
+        .container-a5 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+            padding: 10mm 12mm;
+            box-sizing: border-box;
+        }
+
+        /* --- Górna sekcja z Logo (Glassmorphism Header) --- */
+        .cyber-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 10px 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cyber-header img {
+            height: 55px;
+            object-fit: contain;
+            /* Triki CSS by logo było lepiej widoczne na ciemnym tle, jeśli oryginał jest czarny: 
+               Filtr drop-shadow robi białą poświatę, by napisy z logo dało się odczytać. */
+            filter: brightness(0) invert(1) drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+        }
+
+        .header-text {
+            flex-grow: 1;
+        }
+
+        .school-name {
+            font-weight: 800;
+            font-size: 11px;
+            line-height: 1.2;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .patron {
+            font-weight: 400;
+            font-size: 9px;
+            color: #06B6D4;
+            /* Cyan accent */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* --- Główne Zdjęcie: Ukośne cięcie --- */
+        .hero-diagonal-container {
+            position: relative;
+            margin-top: 20px;
+            height: 155px;
+            width: 100%;
+            z-index: 5;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Dynamiczne, futurystyczne krzywizny (cybergon) */
+            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border-bottom: 3px solid #06B6D4;
+        }
+
+        /* Neonowa linia akcentująca zdjęcie pod clip-pathem (hack) */
+        .hero-img-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #06B6D4, #F97316);
+            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+            z-index: -1;
+            transform: translateY(4px) scale(1.02);
+            filter: blur(2px);
+        }
+
+        /* --- Informacyjne Plakietki (Typy Szkół) --- */
+        .school-types-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: -15px;
+            /* Najazd na zdjęcie z dołu */
+            align-items: flex-end;
+            z-index: 10;
+        }
+
+        .type-glass {
+            padding: 8px 16px;
+            border-radius: 8px 0 8px 8px;
+            background: rgba(19, 70, 89, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-right: 4px solid #06B6D4;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .type-glass.bran {
+            border-right: 4px solid #F97316;
+            font-size: 12px;
+            font-weight: 700;
+            background: rgba(45, 55, 72, 0.5);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-right: 4px solid #F97316;
+        }
+
+        /* --- Ogromna Typografia na Dole --- */
+        .bottom-display {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 0px;
+        }
+
+        .recruitment-tag {
+            background: linear-gradient(90deg, #F97316, #D9231D);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-weight: 900;
+            font-size: 14px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+        }
+
+        .huge-title {
+            font-size: 56px;
+            font-weight: 900;
+            color: #E2E8F0;
+            line-height: 0.85;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            margin: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .huge-title span.outline {
+            color: transparent;
+            -webkit-text-stroke: 1.5px #06B6D4;
+        }
+
+        .motto-bottom {
+            font-size: 11px;
+            font-weight: 300;
+            color: #94A3B8;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .motto-highlight {
+            color: #06B6D4;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="print-bleed-wrapper">
+        <div class="container-a5">
+
+            <!-- Innowacyjny Szklany Header -->
+            <div class="cyber-header">
+                <img src="assets/logozzsp_1_orig.png" alt="Logo ZZSP Zgierz">
+                <div class="header-text">
+                    <div class="school-name">Zgierski Zespół Szkół<br>Ponadpodstawowych</div>
+                    <div class="patron">im. Jana Pawła II</div>
+                </div>
+            </div>
+
+            <!-- Główne zdjęcie z cięciem diagonalnym -->
+            <div class="hero-diagonal-container">
+                <div class="hero-img-border"></div>
+                <img src="assets/cover_image_wide.png" alt="Uczniowie Innowacji" class="hero-img"
+                    onerror="this.src='assets/technikum_info_hero.png'">
+            </div>
+
+            <!-- Typy Szkół nachodzące na margines -->
+            <div class="school-types-stack">
+                <div class="type-glass">Technikum Innowacji</div>
+                <div class="type-glass bran">Szkoła branżowa I i II stopnia</div>
+            </div>
+
+            <!-- Ogromna, nowoczesna Typografia u dołu -->
+            <div class="bottom-display">
+                <div class="recruitment-tag">
+                    Rekrutacja 2026/2027
+                </div>
+                <h1 class="huge-title">INFOR<br><span class="outline">MATOR</span></h1>
+                <div class="motto-bottom">
+                    Przyszłość buduje się <span class="motto-highlight">tutaj</span>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
