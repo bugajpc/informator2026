@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okładka Tył - Informator (Druk A5)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        @page {
+            size: A5;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+            margin: 0;
+            padding: 0;
+            width: 148mm;
+            height: 210mm;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            overflow: hidden;
+        }
+
+        .print-bleed-wrapper {
+            position: relative;
+            width: 148mm;
+            height: 210mm;
+            overflow: hidden;
+            background-color: #F8FAFC;
+        }
+
+        .bg-shape-cyan {
+            position: absolute;
+            top: -50px;
+            left: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .bg-shape-orange {
+            position: absolute;
+            bottom: -50px;
+            right: -250px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(rgba(19, 70, 89, 0.1) 1px, transparent 1px);
+            background-size: 14px 14px;
+            z-index: 2;
+        }
+
+        .container-a5 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            padding: 15mm 15mm;
+            box-sizing: border-box;
+        }
+
+        .invitation-section {
+            text-align: center;
+            margin-bottom: 35px;
+            width: 100%;
+        }
+
+        .huge-title {
+            font-size: 38px;
+            font-weight: 900;
+            color: #134659;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .huge-title span.outline {
+            color: #06B6D4;
+        }
+
+        .motto-bottom {
+            font-size: 13px;
+            font-weight: 500;
+            color: #64748B;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+        }
+
+        .motto-highlight {
+            color: #F97316;
+            font-weight: 800;
+        }
+
+        .qr-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid #FFFFFF;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 12px 32px rgba(30, 41, 59, 0.08);
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 4px solid #06B6D4;
+        }
+
+        .qr-card img {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 5px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .qr-text {
+            margin-top: 15px;
+            font-weight: 800;
+            color: #134659;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 24px 20px;
+            box-shadow: 0 8px 24px rgba(30, 41, 59, 0.04);
+            border: 1px solid #F1F5F9;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .contact-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(6, 182, 212, 0.1);
+            color: #06B6D4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-item:nth-child(2) .contact-icon {
+            background: rgba(249, 115, 22, 0.1);
+            color: #F97316;
+        }
+
+        .contact-item:nth-child(3) .contact-icon {
+            background: rgba(217, 35, 29, 0.1);
+            color: #D9231D;
+        }
+
+        .contact-item:nth-child(4) .contact-icon {
+            background: rgba(19, 70, 89, 0.1);
+            color: #134659;
+        }
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1E293B;
+        }
+
+        @media print {
+            .qr-card {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background-color: #FFFFFF !important;
+                box-shadow: none !important;
+                border: 1px solid #E2E8F0 !important;
+                border-bottom: 4px solid #06B6D4 !important;
+            }
+
+            .contact-list {
+                box-shadow: none !important;
+                border: 1px solid #E2E8F0 !important;
+            }
+
+            .contact-icon {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="print-bleed-wrapper">
+        <div class="bg-shape-cyan"></div>
+        <div class="bg-shape-orange"></div>
+        <div class="bg-pattern"></div>
+
+        <div class="container-a5">
+
+            <div class="invitation-section">
+                <h1 class="huge-title">ZAPRASZAMY<br><span class="outline">DO SZKOŁY</span></h1>
+                <div class="motto-bottom">
+                    Dołącz do grona uczniów <br><span class="motto-highlight">Zgierskiego Zespołu Szkół
+                        Ponadpodstawowych <br>im. Jana Pawła II</span> <br>i rozpocznij z nami swoją drogę w przyszłość!
+                </div>
+            </div>
+
+            <div class="qr-card">
+                <img src="assets/QRCodes/school-website.png" alt="QR Code - Strona Szkoły">
+                <p class="qr-text">Zeskanuj <br>po więcej informacji</p>
+            </div>
+
+            <div class="contact-list">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <div class="contact-text">
+                        <span class="contact-label">Telefon</span>
+                        <span class="contact-value">42-300-13-12</span>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div class="contact-text">
+                        <span class="contact-label">Lokalizacja</span>
+                        <span class="contact-value">95-100 Zgierz, Pl. Jana Kilińskiego 8</span>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope-fill"></i>
+                    </div>
+                    <div class="contact-text">
+                        <span class="contact-label">E-mail</span>
+                        <span class="contact-value">sekretariat_zzsp@miasto.zgierz.pl</span>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-globe"></i>
+                    </div>
+                    <div class="contact-text">
+                        <span class="contact-label">Strona internetowa</span>
+                        <span class="contact-value">https://zzspzgierz.edu.pl</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
