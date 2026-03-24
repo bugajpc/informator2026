@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Cover - ZZSP Zgierz</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #1E293B;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .fb-cover {
+            width: 820px;
+            height: 312px;
+            position: relative;
+            overflow: hidden;
+            background-color: #F8FAFC;
+        }
+
+        /* Subtle radial glows */
+        .bg-glow-cyan {
+            position: absolute;
+            top: -120px;
+            left: -80px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .bg-glow-orange {
+            position: absolute;
+            bottom: -200px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+
+
+        /* Main content layout */
+        .content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 30px 40px;
+            gap: 30px;
+        }
+
+        /* Logo section */
+        .logo-section {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-wrapper {
+            width: 130px;
+            height: 130px;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px;
+            box-shadow: 0 4px 16px rgba(30, 41, 59, 0.06);
+        }
+
+        .logo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Text section */
+        .text-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .school-type-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #F97316;
+            background: rgba(249, 115, 22, 0.1);
+            padding: 4px 12px;
+            border-radius: 6px;
+            width: fit-content;
+        }
+
+        .school-name-main {
+            font-size: 26px;
+            font-weight: 900;
+            color: #134659;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .school-name-main .highlight-cyan {
+            color: #06B6D4;
+        }
+
+        .school-patron {
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748B;
+            letter-spacing: 0.5px;
+        }
+
+        .school-units {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 2px;
+        }
+
+        .unit-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 14px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.2px;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 2px 8px rgba(19, 70, 89, 0.04);
+            width: fit-content;
+        }
+
+        .unit-tag.tech {
+            color: #134659;
+            border-left: 4px solid #06B6D4;
+        }
+
+        .unit-tag.tech .special {
+            font-size: 9px;
+            font-weight: 600;
+            color: #06B6D4;
+            letter-spacing: 0px;
+            text-transform: none;
+            margin-left: 6px;
+        }
+
+        .unit-tag.bran {
+            color: #134659;
+            border-left: 4px solid #F97316;
+        }
+
+        .unit-tag.bran .special {
+            font-size: 9px;
+            font-weight: 600;
+            color: #F97316;
+            letter-spacing: 0px;
+            text-transform: none;
+            margin-left: 6px;
+        }
+
+        /* Right side - school directions icons */
+        .directions-section {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-end;
+        }
+
+        .direction-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .direction-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 2px 8px rgba(30, 41, 59, 0.04);
+        }
+
+        .direction-icon.cyan {
+            background: rgba(6, 182, 212, 0.08);
+            color: #06B6D4;
+        }
+
+        .direction-icon.teal {
+            background: rgba(19, 70, 89, 0.06);
+            color: #134659;
+        }
+
+        .direction-icon.orange {
+            background: rgba(249, 115, 22, 0.08);
+            color: #F97316;
+        }
+
+        .direction-icon .icon-label {
+            display: none;
+        }
+
+        .direction-icon .icon-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+
+
+        /* Print styles */
+        @media print {
+            body {
+                background: #FFFFFF;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+
+
+            .logo-wrapper {
+                background: #FFFFFF !important;
+                box-shadow: none !important;
+                border: 1px solid #E2E8F0 !important;
+            }
+
+            .unit-tag {
+                background: #FFFFFF !important;
+                box-shadow: none !important;
+                border: 1px solid #E2E8F0 !important;
+            }
+
+            .unit-tag.tech {
+                border-left: 4px solid #06B6D4 !important;
+            }
+
+            .unit-tag.bran {
+                border-left: 4px solid #F97316 !important;
+            }
+
+            .school-type-label {
+                background: rgba(249, 115, 22, 0.1) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .direction-icon {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                box-shadow: none !important;
+                border: 1px solid #E2E8F0 !important;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fb-cover">
+        <!-- Background effects -->
+        <div class="bg-glow-cyan"></div>
+        <div class="bg-glow-orange"></div>
+
+
+
+
+        <!-- Main content -->
+        <div class="content">
+            <!-- Logo -->
+            <div class="logo-section">
+                <div class="logo-wrapper">
+                    <img src="assets/logozzsp_1_orig.png" alt="Logo ZZSP Zgierz">
+                </div>
+            </div>
+
+            <!-- School name and tags -->
+            <div class="text-section">
+                <span class="school-type-label">Rekrutacja 2026/2027</span>
+
+                <h1 class="school-name-main">
+                    <span class="highlight-cyan">Zgierski</span> Zespół Szkół<br>
+                    Ponadpodstawowych
+                </h1>
+
+                <p class="school-patron" style="margin-top: -6px;">im. Jana Pawła II</p>
+
+                <div class="school-units">
+                    <div class="unit-tag tech">
+                        Technikum Innowacji <span class="special">z Oddziałami Dwujęzycznymi</span>
+                    </div>
+                    <div class="unit-tag bran">
+                        Szkoły Branżowe <span class="special">I i II Stopnia</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School directions icons -->
+            <div class="directions-section">
+                <div class="direction-row">
+                    <div class="direction-icon cyan">
+                        <div class="icon-content">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                    </div>
+                    <div class="direction-icon teal">
+                        <div class="icon-content">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                    </div>
+                    <div class="direction-icon cyan">
+                        <div class="icon-content">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="direction-row">
+                    <div class="direction-icon teal">
+                        <div class="icon-content">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                    </div>
+                    <div class="direction-icon cyan">
+                        <div class="icon-content">
+                            <i class="bi bi-buildings"></i>
+                        </div>
+                    </div>
+                    <div class="direction-icon teal">
+                        <div class="icon-content">
+                            <i class="bi bi-sun"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="direction-row">
+                    <div class="direction-icon orange">
+                        <div class="icon-content">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                    </div>
+                    <div class="direction-icon orange">
+                        <div class="icon-content">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                    </div>
+                    <div class="direction-icon orange">
+                        <div class="icon-content">
+                            <i class="bi bi-car-front"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
