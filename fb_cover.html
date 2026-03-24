@@ -37,30 +37,110 @@
             height: 312px;
             position: relative;
             overflow: hidden;
-            background-color: #F8FAFC;
+            background: 
+                radial-gradient(ellipse at center, #2F6A81 0%, #2F6A81 40%, #2F6A81 70%, #2F6A81 90%);
         }
 
-        /* Subtle radial glows */
-        .bg-glow-cyan {
+        /* Subtle geometric shapes pattern - large shapes */
+        .fb-cover::before {
+            content: '';
             position: absolute;
-            top: -120px;
-            left: -80px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+            top: -60px;
+            left: -40px;
+            width: 220px;
+            height: 220px;
+            border: 2px solid rgba(255, 255, 255, 0.06);
             border-radius: 50%;
-            z-index: 1;
+            z-index: 2;
+            pointer-events: none;
         }
 
-        .bg-glow-orange {
+        /* Subtle accent glow */
+        .fb-cover::after {
+            content: '';
             position: absolute;
-            bottom: -200px;
-            right: -100px;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+            bottom: -90px;
+            right: 120px;
+            width: 260px;
+            height: 260px;
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            transform: rotate(25deg);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* Decorative background shapes */
+        .bg-shape {
+            position: absolute;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .bg-shape-1 {
+            top: -40px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border: 2px solid rgba(255, 255, 255, 0.05);
             border-radius: 50%;
-            z-index: 1;
+        }
+
+        .bg-shape-2 {
+            bottom: -70px;
+            left: 160px;
+            width: 180px;
+            height: 180px;
+            border: 2px solid rgba(6, 182, 212, 0.08);
+            border-radius: 50%;
+        }
+
+        .bg-shape-3 {
+            top: 30px;
+            right: 250px;
+            width: 100px;
+            height: 100px;
+            border: 1.5px solid rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            transform: rotate(15deg);
+        }
+
+        .bg-shape-4 {
+            bottom: -30px;
+            left: -30px;
+            width: 140px;
+            height: 140px;
+            border: 1.5px solid rgba(249, 115, 22, 0.07);
+            border-radius: 24px;
+            transform: rotate(-12deg);
+        }
+
+        .bg-shape-5 {
+            top: -20px;
+            left: 400px;
+            width: 80px;
+            height: 80px;
+            border: 1.5px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .bg-shape-6 {
+            top: 60px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            border: 1.5px solid rgba(6, 182, 212, 0.06);
+            border-radius: 50%;
+        }
+
+        .bg-shape-7 {
+            bottom: 20px;
+            right: 50px;
+            width: 60px;
+            height: 60px;
+            border: 1.5px solid rgba(255, 255, 255, 0.04);
+            border-radius: 14px;
+            transform: rotate(35deg);
         }
 
 
@@ -88,13 +168,13 @@
             width: 130px;
             height: 130px;
             background: #FFFFFF;
-            border: 1px solid #E2E8F0;
+            border: 1px solid rgba(150, 160, 170, 0.4);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 14px;
-            box-shadow: 0 4px 16px rgba(30, 41, 59, 0.06);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .logo-wrapper img {
@@ -119,30 +199,31 @@
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #F97316;
-            background: rgba(249, 115, 22, 0.1);
-            padding: 4px 12px;
+            color: #FFFFFF;
+            background: #F97316;
+            padding: 5px 14px;
             border-radius: 6px;
             width: fit-content;
+            box-shadow: 0 2px 10px rgba(249, 115, 22, 0.35);
         }
 
         .school-name-main {
             font-size: 26px;
             font-weight: 900;
-            color: #134659;
+            color: #FFFFFF;
             line-height: 1.15;
             letter-spacing: -0.5px;
             text-transform: uppercase;
         }
 
         .school-name-main .highlight-cyan {
-            color: #06B6D4;
+            color: #67E8F9;
         }
 
         .school-patron {
             font-size: 13px;
             font-weight: 600;
-            color: #64748B;
+            color: rgba(255, 255, 255, 0.6);
             letter-spacing: 0.5px;
         }
 
@@ -162,35 +243,35 @@
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: -0.2px;
-            background: #FFFFFF;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 2px 8px rgba(19, 70, 89, 0.04);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             width: fit-content;
         }
 
         .unit-tag.tech {
-            color: #134659;
-            border-left: 4px solid #06B6D4;
+            color: #FFFFFF;
+            border-left: 4px solid #67E8F9;
         }
 
         .unit-tag.tech .special {
             font-size: 9px;
             font-weight: 600;
-            color: #06B6D4;
+            color: #67E8F9;
             letter-spacing: 0px;
             text-transform: none;
             margin-left: 6px;
         }
 
         .unit-tag.bran {
-            color: #134659;
-            border-left: 4px solid #F97316;
+            color: #FFFFFF;
+            border-left: 4px solid #FB923C;
         }
 
         .unit-tag.bran .special {
             font-size: 9px;
             font-weight: 600;
-            color: #F97316;
+            color: #FB923C;
             letter-spacing: 0px;
             text-transform: none;
             margin-left: 6px;
@@ -218,23 +299,23 @@
             align-items: center;
             justify-content: center;
             font-size: 22px;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 2px 8px rgba(30, 41, 59, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .direction-icon.cyan {
-            background: rgba(6, 182, 212, 0.08);
-            color: #06B6D4;
+            background: rgba(6, 182, 212, 0.15);
+            color: #67E8F9;
         }
 
         .direction-icon.teal {
-            background: rgba(19, 70, 89, 0.06);
-            color: #134659;
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         .direction-icon.orange {
-            background: rgba(249, 115, 22, 0.08);
-            color: #F97316;
+            background: rgba(249, 115, 22, 0.15);
+            color: #FB923C;
         }
 
         .direction-icon .icon-label {
@@ -258,30 +339,33 @@
                 print-color-adjust: exact !important;
             }
 
-
+            .fb-cover {
+                background-color: #134659 !important;
+            }
 
             .logo-wrapper {
                 background: #FFFFFF !important;
                 box-shadow: none !important;
-                border: 1px solid #E2E8F0 !important;
+                border: 1px solid rgba(255, 255, 255, 0.3) !important;
             }
 
             .unit-tag {
-                background: #FFFFFF !important;
+                background: rgba(255, 255, 255, 0.1) !important;
                 box-shadow: none !important;
-                border: 1px solid #E2E8F0 !important;
+                border: 1px solid rgba(255, 255, 255, 0.15) !important;
             }
 
             .unit-tag.tech {
-                border-left: 4px solid #06B6D4 !important;
+                border-left: 4px solid #67E8F9 !important;
             }
 
             .unit-tag.bran {
-                border-left: 4px solid #F97316 !important;
+                border-left: 4px solid #FB923C !important;
             }
 
             .school-type-label {
-                background: rgba(249, 115, 22, 0.1) !important;
+                background: #F97316 !important;
+                color: #FFFFFF !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
@@ -290,22 +374,22 @@
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 box-shadow: none !important;
-                border: 1px solid #E2E8F0 !important;
+                border: 1px solid rgba(255, 255, 255, 0.15) !important;
             }
-
-
         }
     </style>
 </head>
 
 <body>
     <div class="fb-cover">
-        <!-- Background effects -->
-        <div class="bg-glow-cyan"></div>
-        <div class="bg-glow-orange"></div>
-
-
-
+        <!-- Background shapes -->
+        <div class="bg-shape bg-shape-1"></div>
+        <div class="bg-shape bg-shape-2"></div>
+        <div class="bg-shape bg-shape-3"></div>
+        <div class="bg-shape bg-shape-4"></div>
+        <div class="bg-shape bg-shape-5"></div>
+        <div class="bg-shape bg-shape-6"></div>
+        <div class="bg-shape bg-shape-7"></div>
 
         <!-- Main content -->
         <div class="content">
@@ -350,7 +434,7 @@
                             <i class="bi bi-code-slash"></i>
                         </div>
                     </div>
-                    <div class="direction-icon cyan">
+                    <div class="direction-icon orange">
                         <div class="icon-content">
                             <i class="bi bi-robot"></i>
                         </div>
@@ -379,7 +463,7 @@
                             <i class="bi bi-truck"></i>
                         </div>
                     </div>
-                    <div class="direction-icon orange">
+                    <div class="direction-icon cyan">
                         <div class="icon-content">
                             <i class="bi bi-geo-alt"></i>
                         </div>
