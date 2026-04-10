@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informator 2026/2027 — Indeks Stron</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan:   #06B6D4;
+      --amber:  #F59E0B;
+      --gray:   #6B7280;
+      --cyan-bg:  #ECFEFF;
+      --amber-bg: #FFFBEB;
+      --gray-bg:  #F9FAFB;
+      --text:   #111827;
+      --muted:  #6B7280;
+      --border: #E5E7EB;
+      --radius: 14px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F3F4F6;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 0 0 64px;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+      border-bottom: 4px solid var(--cyan);
+    }
+    .site-header .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .site-header .logo img {
+      height: 64px;
+      width: auto;
+    }
+    .site-header h1 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .site-header h1 span { color: var(--cyan); }
+    .site-header p {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #94A3B8;
+    }
+
+    /* ── Legend ── */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      padding: 20px 24px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-top: 48px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .section-accent {
+      width: 6px;
+      height: 36px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+    .section-header .count {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: #F3F4F6;
+      color: var(--muted);
+    }
+
+    /* ── Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      border-left: 5px solid var(--c, var(--gray));
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      padding: 18px 18px 14px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: color-mix(in srgb, var(--c, var(--gray)) 12%, transparent);
+      color: var(--c, var(--gray));
+      align-self: flex-start;
+    }
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-file {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-family: 'Courier New', monospace;
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* colour helpers */
+    .c-cyan  { --c: #06B6D4; }
+    .c-amber { --c: #F59E0B; }
+    .c-gray  { --c: #6B7280; }
+
+    /* ── Footer ── */
+    .site-footer {
+      margin-top: 64px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 0 24px;
+    }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 400px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+      <img src="logozzsp_1_orig.png" alt="Logo ZZSP Zgierz" onerror="this.style.display='none'" />
+    </div>
+    <h1>Informator <span>2026/2027</span></h1>
+    <p>Zgierski Zespół Szkół Ponadpodstawowych im. Jana Pawła II &mdash; Indeks wszystkich stron</p>
+  </header>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#06B6D4;"></div>
+      Technikum Innowacji
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#F59E0B;"></div>
+      Szkoła Branżowa
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#6B7280;"></div>
+      Ogólne / Inne
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 1 — Ogólne / Okładki
+    ══════════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-accent" style="background:#6B7280;"></div>
+        <h2>Ogólne &amp; Okładki</h2>
+        <span class="count">4 strony</span>
+      </div>
+      <div class="grid">
+
+        <a class="card c-gray" href="0_okladka.html">
+          <span class="card-badge">Okładka</span>
+          <div class="card-title">Okładka — Informator</div>
+          <div class="card-file">0_okladka.html</div>
+        </a>
+
+        <a class="card c-gray" href="0_okladka_tyl.html">
+          <span class="card-badge">Okładka</span>
+          <div class="card-title">Okładka Tył — Zapraszamy do Szkoły</div>
+          <div class="card-file">0_okladka_tyl.html</div>
+        </a>
+
+        <a class="card c-gray" href="fb_cover.html">
+          <span class="card-badge">Social Media</span>
+          <div class="card-title">Facebook Cover — Rekrutacja 2026/2027</div>
+          <div class="card-file">fb_cover.html</div>
+        </a>
+
+        <a class="card c-gray" href="0_o_szkole.html">
+          <span class="card-badge">O Szkole</span>
+          <div class="card-title">O Szkole — Szkoła w Liczbach, Projekty, Certyfikaty</div>
+          <div class="card-file">0_o_szkole.html</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 2 — Technikum Informacje + Tabele
+    ══════════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-accent" style="background:#06B6D4;"></div>
+        <h2>Technikum Innowacji — Informacje &amp; Tabele</h2>
+        <span class="count">2 strony</span>
+      </div>
+      <div class="grid">
+
+        <a class="card c-cyan" href="0_info_technikum.html">
+          <span class="card-badge">Technikum</span>
+          <div class="card-title">Technikum Innowacji z Oddziałami Dwujęzycznymi — Informacje</div>
+          <div class="card-file">0_info_technikum.html</div>
+        </a>
+
+        <a class="card c-cyan" href="technikum_tabele.html">
+          <span class="card-badge">Technikum</span>
+          <div class="card-title">Tabele Rekrutacyjne — Technikum</div>
+          <div class="card-file">technikum_tabele.html</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 3 — Technikum Profile Zawodowe
+    ══════════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-accent" style="background:#06B6D4;"></div>
+        <h2>Technikum Innowacji — Profile Zawodowe</h2>
+        <span class="count">8 stron</span>
+      </div>
+      <div class="grid">
+
+        <a class="card c-cyan" href="t_informatyk.html">
+          <span class="card-badge">Technikum</span>
+          <div class="card-title">Technik Informatyk</div>
+          <div class="card-file">t_informatyk.html</div>
+        </a>
+
+        <a class="card c-cyan" href="t_robotyk.html">
+          <span class="card-badge">Technikum</span>
+          <div class="card-title">Technik Robotyk</div>
+          <div class="card-file">t_robotyk.html</div>
+        </a>
+
+        <a class="card c-cyan" href="t_programista.html">
+          <span class="card-badge">Technikum</span>
+          <div class="card-title">Technik Programista Full Stack</div>
+          <div class="card-file">t_programista.html</div>
+        </a>
+
+        <a class="card c-cyan" href="t_elektryk.html">
+          <span class="card-badge">Technikum</span>
+          <div class="card-title">Technik Elektryk</div>
+          <div class="card-file">t_elektryk.html</div>
+        </a>
+
+        <a class="card c-cyan" href="t_oze.html">
+          <span class="card-badge">Technikum</span>
+          <div class="card-title">Technik Urządzeń i Systemów Energetyki Odnawialnej (OZE)</div>
+          <div class="card-file">t_oze.html</div>
+        </a>
+
+        <a class="card c-cyan" href="t_logistyk.html">
+          <span class="card-badge">Technikum</span>
+          <div class="card-title">Technik Logistyk</div>
+          <div class="card-file">t_logistyk.html</div>
+        </a>
+
+        <a class="card c-cyan" href="t_geodeta.html">
+          <span class="card-badge">Technikum</span>
+          <div class="card-title">Technik Geodeta</div>
+          <div class="card-file">t_geodeta.html</div>
+        </a>
+
+        <a class="card c-cyan" href="t_budownictwo.html">
+          <span class="card-badge">Technikum</span>
+          <div class="card-title">Technik Budownictwa</div>
+          <div class="card-file">t_budownictwo.html</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 4 — Szkoła Branżowa I Stopnia
+    ══════════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-accent" style="background:#F59E0B;"></div>
+        <h2>Szkoła Branżowa I Stopnia</h2>
+        <span class="count">6 stron</span>
+      </div>
+      <div class="grid">
+
+        <a class="card c-amber" href="0_info_branzowa1.html">
+          <span class="card-badge">Branżowa I</span>
+          <div class="card-title">Szkoła Branżowa I Stopnia — Informacje</div>
+          <div class="card-file">0_info_branzowa1.html</div>
+        </a>
+
+        <a class="card c-amber" href="branzowa_tabele.html">
+          <span class="card-badge">Branżowa I</span>
+          <div class="card-title">Tabele Rekrutacyjne — Szkoły Branżowe</div>
+          <div class="card-file">branzowa_tabele.html</div>
+        </a>
+
+        <a class="card c-amber" href="1_fryzjer.html">
+          <span class="card-badge">Branżowa I</span>
+          <div class="card-title">Fryzjer z Elementami Wizażu</div>
+          <div class="card-file">1_fryzjer.html</div>
+        </a>
+
+        <a class="card c-amber" href="1_elektryk.html">
+          <span class="card-badge">Branżowa I</span>
+          <div class="card-title">Elektryk</div>
+          <div class="card-file">1_elektryk.html</div>
+        </a>
+
+        <a class="card c-amber" href="1_mechanik.html">
+          <span class="card-badge">Branżowa I</span>
+          <div class="card-title">Mechanik Pojazdów Samochodowych</div>
+          <div class="card-file">1_mechanik.html</div>
+        </a>
+
+        <a class="card c-amber" href="1_monter.html">
+          <span class="card-badge">Branżowa I</span>
+          <div class="card-title">Monter Zabudowy i Robót Wykończeniowych w Budownictwie</div>
+          <div class="card-file">1_monter.html</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 5 — Szkoła Branżowa II Stopnia
+    ══════════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-accent" style="background:#F59E0B;"></div>
+        <h2>Szkoła Branżowa II Stopnia</h2>
+        <span class="count">5 stron</span>
+      </div>
+      <div class="grid">
+
+        <a class="card c-amber" href="0_info_branzowa2.html">
+          <span class="card-badge">Branżowa II</span>
+          <div class="card-title">Szkoła Branżowa II Stopnia — Informacje</div>
+          <div class="card-file">0_info_branzowa2.html</div>
+        </a>
+
+        <a class="card c-amber" href="2_fryzjer.html">
+          <span class="card-badge">Branżowa II</span>
+          <div class="card-title">Technik Usług Fryzjerskich z Elementami Wizażu</div>
+          <div class="card-file">2_fryzjer.html</div>
+        </a>
+
+        <a class="card c-amber" href="2_elektryk.html">
+          <span class="card-badge">Branżowa II</span>
+          <div class="card-title">Technik Elektryk</div>
+          <div class="card-file">2_elektryk.html</div>
+        </a>
+
+        <a class="card c-amber" href="2_technik_pojazdow.html">
+          <span class="card-badge">Branżowa II</span>
+          <div class="card-title">Technik Pojazdów Samochodowych</div>
+          <div class="card-file">2_technik_pojazdow.html</div>
+        </a>
+
+        <a class="card c-amber" href="2_roboty_wykonczeniowe.html">
+          <span class="card-badge">Branżowa II</span>
+          <div class="card-title">Technik Robót Wykończeniowych w Budownictwie</div>
+          <div class="card-file">2_roboty_wykonczeniowe.html</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 6 — Wszystkie Tabele
+    ══════════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-accent" style="background:#6B7280;"></div>
+        <h2>Zestawienie Zbiorcze</h2>
+        <span class="count">1 strona</span>
+      </div>
+      <div class="grid">
+
+        <a class="card c-gray" href="wszystkie_tabele.html">
+          <span class="card-badge">Tabele</span>
+          <div class="card-title">Wszystkie Tabele Rekrutacyjne — Technikum &amp; Szkoły Branżowe</div>
+          <div class="card-file">wszystkie_tabele.html</div>
+        </a>
+
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <footer class="site-footer">
+    <p>Zgierski Zespół Szkół Ponadpodstawowych im. Jana Pawła II &mdash; Pl. Jana Kilińskiego 8, 95-100 Zgierz</p>
+    <p style="margin-top:4px;">Rekrutacja 2026/2027 &mdash; Łącznie <strong>26</strong> stron</p>
+  </footer>
+
+</body>
+</html>
